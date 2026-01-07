@@ -1,0 +1,1448 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inmobiliaria Moderna</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ===== RESET Y VARIABLES ===== */
+        :root {
+            --primary: #2563eb;
+            --secondary: #0ea5e9;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --gray: #64748b;
+            --success: #10b981;
+            --danger: #ef4444;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --radius: 8px;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* ===== TIPOGRAFÍA Y BOTONES ===== */
+        h1, h2, h3, h4 {
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 24px;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: var(--radius);
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 16px;
+        }
+
+        .btn:hover {
+            background-color: #1d4ed8;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .btn-success {
+            background-color: var(--success);
+        }
+
+        .btn-success:hover {
+            background-color: #0da271;
+        }
+
+        .btn-danger {
+            background-color: var(--danger);
+        }
+
+        .btn-danger:hover {
+            background-color: #dc2626;
+        }
+
+        /* ===== HEADER ===== */
+        header {
+            background-color: white;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo i {
+            font-size: 32px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            font-size: 16px;
+            transition: var(--transition);
+            padding: 8px 0;
+            position: relative;
+        }
+
+        nav ul li a:hover,
+        nav ul li a.active {
+            color: var(--primary);
+        }
+
+        nav ul li a.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--primary);
+            border-radius: 2px;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: var(--dark);
+            cursor: pointer;
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            background: linear-gradient(135deg, rgba(26, 58, 95, 0.9) 0%, rgba(14, 165, 233, 0.9) 100%);
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+            margin-top: 0;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            opacity: 0.9;
+        }
+
+        /* ===== FILTROS ===== */
+        .filters-section {
+            margin-top: -50px;
+            position: relative;
+            z-index: 100;
+        }
+
+        .filters {
+            background-color: white;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-lg);
+            padding: 30px;
+        }
+
+        .filter-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .filter-group label {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--dark);
+        }
+
+        .filter-group select,
+        .filter-group input {
+            padding: 12px 15px;
+            border: 1px solid #e2e8f0;
+            border-radius: var(--radius);
+            font-family: inherit;
+            font-size: 16px;
+            transition: var(--transition);
+        }
+
+        .filter-group select:focus,
+        .filter-group input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        .filter-actions {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        /* ===== PROPIEDADES ===== */
+        .properties-section {
+            padding: 80px 0;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            color: var(--dark);
+        }
+
+        .properties-count {
+            color: var(--gray);
+            font-size: 1.1rem;
+        }
+
+        .properties-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .property-card {
+            background-color: white;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .property-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .property-img {
+            height: 220px;
+            width: 100%;
+            background-color: #e2e8f0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .property-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .property-card:hover .property-img img {
+            transform: scale(1.05);
+        }
+
+        .property-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background-color: var(--primary);
+            color: white;
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            z-index: 2;
+        }
+
+        .property-content {
+            padding: 25px;
+        }
+
+        .property-price {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .property-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+
+        .property-location {
+            color: var(--gray);
+            font-size: 1rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .property-location i {
+            color: var(--primary);
+        }
+
+        .property-description {
+            color: var(--gray);
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .property-features {
+            display: flex;
+            justify-content: space-between;
+            padding-top: 20px;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .feature {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        .feature i {
+            color: var(--primary);
+            margin-bottom: 8px;
+            font-size: 1.2rem;
+        }
+
+        .feature span {
+            color: var(--gray);
+        }
+
+        /* ===== MODAL ===== */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .modal {
+            background-color: white;
+            border-radius: var(--radius);
+            width: 100%;
+            max-width: 600px;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: var(--shadow-lg);
+            animation: modalFadeIn 0.3s ease;
+        }
+
+        @keyframes modalFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .modal-header {
+            padding: 25px 30px;
+            border-bottom: 1px solid #e2e8f0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-header h2 {
+            font-size: 1.8rem;
+            color: var(--dark);
+        }
+
+        .close-modal {
+            background: none;
+            border: none;
+            font-size: 28px;
+            color: var(--gray);
+            cursor: pointer;
+            transition: var(--transition);
+            line-height: 1;
+        }
+
+        .close-modal:hover {
+            color: var(--dark);
+        }
+
+        .modal-body {
+            padding: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #e2e8f0;
+            border-radius: var(--radius);
+            font-family: inherit;
+            font-size: 16px;
+            transition: var(--transition);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .form-actions {
+            display: flex;
+            gap: 15px;
+            justify-content: flex-end;
+            margin-top: 30px;
+            padding-top: 25px;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 70px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.4rem;
+            margin-bottom: 25px;
+            color: white;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--primary);
+        }
+
+        .footer-column p {
+            color: #cbd5e1;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: #cbd5e1;
+            text-decoration: none;
+            transition: var(--transition);
+            display: inline-block;
+        }
+
+        .footer-links a:hover {
+            color: white;
+            transform: translateX(5px);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #94a3b8;
+            font-size: 0.95rem;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .properties-grid {
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                padding: 15px 0;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            nav ul {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background-color: white;
+                flex-direction: column;
+                align-items: center;
+                padding-top: 50px;
+                transition: var(--transition);
+                box-shadow: var(--shadow-lg);
+                z-index: 999;
+            }
+            
+            nav ul.active {
+                left: 0;
+            }
+            
+            nav ul li {
+                margin: 0 0 25px 0;
+            }
+            
+            nav ul li a {
+                font-size: 18px;
+            }
+            
+            .hero {
+                padding: 80px 0;
+            }
+            
+            .hero h1 {
+                font-size: 2.3rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .filter-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .properties-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .modal {
+                width: 95%;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .form-actions {
+                flex-direction: column;
+            }
+            
+            .form-actions .btn {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .property-price {
+                font-size: 1.6rem;
+            }
+            
+            .property-title {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ===== HEADER ===== -->
+    <header>
+        <div class="container">
+            <div class="header-container">
+                <a href="#" class="logo">
+                    <i class="fas fa-home"></i>
+                    Inmo<span style="color: var(--secondary);">Premium</span>
+                </a>
+                
+                <nav>
+                    <ul id="mainNav">
+                        <li><a href="#inicio" class="active">Inicio</a></li>
+                        <li><a href="#propiedades">Propiedades</a></li>
+                        <li><a href="#servicios">Servicios</a></li>
+                        <li><a href="#nosotros">Nosotros</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </nav>
+                
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="inicio">
+        <div class="container">
+            <h1>Encuentra tu hogar ideal</h1>
+            <p>Descubre las mejores propiedades en venta y alquiler. Más de 10 años ayudando a familias a encontrar su lugar perfecto.</p>
+            <a href="#propiedades" class="btn">Explorar Propiedades</a>
+        </div>
+    </section>
+
+    <!-- ===== FILTROS ===== -->
+    <section class="filters-section">
+        <div class="container">
+            <div class="filters">
+                <div class="filter-row">
+                    <div class="filter-group">
+                        <label for="categoryFilter">Categoría</label>
+                        <select id="categoryFilter">
+                            <option value="">Todas las categorías</option>
+                            <option value="casa">Casas</option>
+                            <option value="apartamento">Apartamentos</option>
+                            <option value="local">Locales Comerciales</option>
+                            <option value="terreno">Terrenos</option>
+                            <option value="oficina">Oficinas</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label for="typeFilter">Tipo</label>
+                        <select id="typeFilter">
+                            <option value="">Venta o Alquiler</option>
+                            <option value="venta">En Venta</option>
+                            <option value="alquiler">En Alquiler</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label for="priceFilter">Precio Máximo</label>
+                        <select id="priceFilter">
+                            <option value="">Sin límite</option>
+                            <option value="50000">$50,000</option>
+                            <option value="100000">$100,000</option>
+                            <option value="200000">$200,000</option>
+                            <option value="500000">$500,000</option>
+                            <option value="1000000">$1,000,000</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label for="locationFilter">Ubicación</label>
+                        <input type="text" id="locationFilter" placeholder="Ej: Centro, Norte...">
+                    </div>
+                </div>
+                
+                <div class="filter-actions">
+                    <button class="btn" id="applyFiltersBtn">
+                        <i class="fas fa-search"></i> Buscar Propiedades
+                    </button>
+                    <button class="btn btn-outline" id="clearFiltersBtn">
+                        <i class="fas fa-times"></i> Limpiar Filtros
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PROPIEDADES ===== -->
+    <section class="properties-section" id="propiedades">
+        <div class="container">
+            <div class="section-header">
+                <div>
+                    <h2 class="section-title">Propiedades Destacadas</h2>
+                    <div class="properties-count" id="propertiesCount">Cargando propiedades...</div>
+                </div>
+                <button class="btn btn-success" id="openModalBtn">
+                    <i class="fas fa-plus"></i> Nueva Propiedad
+                </button>
+            </div>
+            
+            <div class="properties-grid" id="propertiesGrid">
+                <!-- Las propiedades se cargarán aquí dinámicamente -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== MODAL PARA AGREGAR PROPIEDAD ===== -->
+    <div class="modal-overlay" id="propertyModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h2 id="modalTitle">Agregar Nueva Propiedad</h2>
+                <button class="close-modal" id="closeModalBtn">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="propertyForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="propertyTitle">Título *</label>
+                            <input type="text" id="propertyTitle" placeholder="Ej: Casa moderna de 3 habitaciones" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="propertyCategory">Categoría *</label>
+                            <select id="propertyCategory" required>
+                                <option value="">Seleccionar categoría</option>
+                                <option value="casa">Casa</option>
+                                <option value="apartamento">Apartamento</option>
+                                <option value="local">Local Comercial</option>
+                                <option value="terreno">Terreno</option>
+                                <option value="oficina">Oficina</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="propertyType">Tipo *</label>
+                            <select id="propertyType" required>
+                                <option value="">Seleccionar tipo</option>
+                                <option value="venta">Venta</option>
+                                <option value="alquiler">Alquiler</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="propertyPrice">Precio * ($)</label>
+                            <input type="number" id="propertyPrice" placeholder="Ej: 150000" min="0" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="propertyLocation">Ubicación *</label>
+                            <input type="text" id="propertyLocation" placeholder="Ej: Centro, Zona Norte" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="propertyArea">Área (m²)</label>
+                            <input type="number" id="propertyArea" placeholder="Ej: 120" min="0">
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="propertyRooms">Habitaciones</label>
+                            <input type="number" id="propertyRooms" placeholder="Ej: 3" min="0">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="propertyBathrooms">Baños</label>
+                            <input type="number" id="propertyBathrooms" placeholder="Ej: 2" min="0">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="propertyDescription">Descripción *</label>
+                        <textarea id="propertyDescription" placeholder="Describe la propiedad en detalle..." required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="propertyImage">URL de la imagen *</label>
+                        <input type="text" id="propertyImage" placeholder="https://ejemplo.com/imagen.jpg" required>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-outline" id="cancelModalBtn">Cancelar</button>
+                        <button type="submit" class="btn btn-success">
+                            <i class="fas fa-save"></i> Guardar Propiedad
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+    <footer id="contacto">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>InmoPremium</h3>
+                    <p>Tu socio confiable en bienes raíces. Más de una década conectando personas con sus hogares ideales.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul class="footer-links">
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#propiedades">Propiedades</a></li>
+                        <li><a href="#servicios">Servicios</a></li>
+                        <li><a href="#nosotros">Nosotros</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contacto</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> Av. Principal 1234, Ciudad</li>
+                        <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+                        <li><i class="fas fa-envelope"></i> info@inmopremium.com</li>
+                        <li><i class="fas fa-clock"></i> Lun-Vie: 9:00 - 18:00</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                &copy; 2024 InmoPremium. Todos los derechos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== JAVASCRIPT ===== -->
+    <script>
+        // ==============================================
+        // CONFIGURACIÓN Y DATOS INICIALES
+        // ==============================================
+        const propertiesData = [
+            {
+                id: 1,
+                title: "Casa moderna en zona residencial",
+                category: "casa",
+                type: "venta",
+                price: 250000,
+                location: "Zona Norte",
+                description: "Hermosa casa con 3 habitaciones, 2 baños, amplio jardín y cochera para 2 autos. Acabados de lujo y excelente ubicación cerca de escuelas y centros comerciales.",
+                image: "https://images.unsplash.com/photo-1613490493576-7fde63acd811?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                area: 180,
+                rooms: 3,
+                bathrooms: 2,
+                createdAt: "2024-01-15"
+            },
+            {
+                id: 2,
+                title: "Apartamento de lujo en el centro",
+                category: "apartamento",
+                type: "alquiler",
+                price: 1200,
+                location: "Centro Histórico",
+                description: "Elegante apartamento completamente amueblado con vista panorámica a la ciudad. Seguridad 24/7, gimnasio y piscina incluidos.",
+                image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                area: 95,
+                rooms: 2,
+                bathrooms: 1,
+                createdAt: "2024-02-10"
+            },
+            {
+                id: 3,
+                title: "Local comercial en zona de alto tráfico",
+                category: "local",
+                type: "venta",
+                price: 180000,
+                location: "Zona Comercial Este",
+                description: "Local ideal para negocio con excelente ubicación, alto tráfico de personas y amplio espacio para mostrador y almacenamiento.",
+                image: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                area: 150,
+                rooms: 1,
+                bathrooms: 1,
+                createdAt: "2024-01-28"
+            },
+            {
+                id: 4,
+                title: "Terreno plano para construcción",
+                category: "terreno",
+                type: "venta",
+                price: 75000,
+                location: "Zona Sur",
+                description: "Terreno completamente plano, ideal para construcción residencial o comercial. Servicios básicos disponibles en la zona.",
+                image: "https://images.unsplash.com/photo-1586773860418-dc22f8b874bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                area: 500,
+                rooms: 0,
+                bathrooms: 0,
+                createdAt: "2024-03-05"
+            }
+        ];
+
+        // ==============================================
+        // VARIABLES GLOBALES
+        // ==============================================
+        let properties = [...propertiesData];
+        let filteredProperties = [...properties];
+        let isEditing = false;
+        let currentEditId = null;
+
+        // ==============================================
+        // ELEMENTOS DOM
+        // ==============================================
+        const elements = {
+            // Navegación
+            mobileMenuBtn: document.getElementById('mobileMenuBtn'),
+            mainNav: document.getElementById('mainNav'),
+            
+            // Propiedades
+            propertiesGrid: document.getElementById('propertiesGrid'),
+            propertiesCount: document.getElementById('propertiesCount'),
+            
+            // Filtros
+            categoryFilter: document.getElementById('categoryFilter'),
+            typeFilter: document.getElementById('typeFilter'),
+            priceFilter: document.getElementById('priceFilter'),
+            locationFilter: document.getElementById('locationFilter'),
+            applyFiltersBtn: document.getElementById('applyFiltersBtn'),
+            clearFiltersBtn: document.getElementById('clearFiltersBtn'),
+            
+            // Modal
+            propertyModal: document.getElementById('propertyModal'),
+            modalTitle: document.getElementById('modalTitle'),
+            propertyForm: document.getElementById('propertyForm'),
+            openModalBtn: document.getElementById('openModalBtn'),
+            closeModalBtn: document.getElementById('closeModalBtn'),
+            cancelModalBtn: document.getElementById('cancelModalBtn'),
+            
+            // Formulario
+            propertyTitle: document.getElementById('propertyTitle'),
+            propertyCategory: document.getElementById('propertyCategory'),
+            propertyType: document.getElementById('propertyType'),
+            propertyPrice: document.getElementById('propertyPrice'),
+            propertyLocation: document.getElementById('propertyLocation'),
+            propertyArea: document.getElementById('propertyArea'),
+            propertyRooms: document.getElementById('propertyRooms'),
+            propertyBathrooms: document.getElementById('propertyBathrooms'),
+            propertyDescription: document.getElementById('propertyDescription'),
+            propertyImage: document.getElementById('propertyImage')
+        };
+
+        // ==============================================
+        // FUNCIONES DE UTILIDAD
+        // ==============================================
+        const utils = {
+            formatPrice: (price, type) => {
+                const formatted = new Intl.NumberFormat('es-ES').format(price);
+                return type === 'alquiler' ? `$${formatted}/mes` : `$${formatted}`;
+            },
+            
+            showNotification: (message, type = 'success') => {
+                // Crear elemento de notificación
+                const notification = document.createElement('div');
+                notification.className = `notification ${type}`;
+                notification.textContent = message;
+                notification.style.cssText = `
+                    position: fixed;
+                    top: 20px;
+                    right: 20px;
+                    padding: 15px 25px;
+                    border-radius: 8px;
+                    color: white;
+                    font-weight: 600;
+                    z-index: 3000;
+                    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+                    animation: slideIn 0.3s ease, fadeOut 0.3s ease 2.7s forwards;
+                `;
+                
+                if (type === 'success') {
+                    notification.style.backgroundColor = '#10b981';
+                } else if (type === 'error') {
+                    notification.style.backgroundColor = '#ef4444';
+                } else {
+                    notification.style.backgroundColor = '#3b82f6';
+                }
+                
+                // Animaciones
+                const style = document.createElement('style');
+                style.textContent = `
+                    @keyframes slideIn {
+                        from { transform: translateX(100%); opacity: 0; }
+                        to { transform: translateX(0); opacity: 1; }
+                    }
+                    @keyframes fadeOut {
+                        from { opacity: 1; }
+                        to { opacity: 0; visibility: hidden; }
+                    }
+                `;
+                document.head.appendChild(style);
+                
+                document.body.appendChild(notification);
+                
+                // Eliminar después de 3 segundos
+                setTimeout(() => {
+                    if (notification.parentNode) {
+                        notification.parentNode.removeChild(notification);
+                    }
+                }, 3000);
+            },
+            
+            validateForm: () => {
+                const errors = [];
+                const fields = [
+                    { element: elements.propertyTitle, name: 'Título' },
+                    { element: elements.propertyCategory, name: 'Categoría' },
+                    { element: elements.propertyType, name: 'Tipo' },
+                    { element: elements.propertyPrice, name: 'Precio' },
+                    { element: elements.propertyLocation, name: 'Ubicación' },
+                    { element: elements.propertyDescription, name: 'Descripción' },
+                    { element: elements.propertyImage, name: 'URL de la imagen' }
+                ];
+                
+                fields.forEach(field => {
+                    if (!field.element.value.trim()) {
+                        errors.push(`${field.name} es requerido`);
+                    }
+                });
+                
+                if (elements.propertyPrice.value && parseFloat(elements.propertyPrice.value) <= 0) {
+                    errors.push('El precio debe ser mayor a 0');
+                }
+                
+                return errors;
+            },
+            
+            resetForm: () => {
+                elements.propertyForm.reset();
+                isEditing = false;
+                currentEditId = null;
+                elements.modalTitle.textContent = 'Agregar Nueva Propiedad';
+            }
+        };
+
+        // ==============================================
+        // FUNCIONES DE PROPIEDADES
+        // ==============================================
+        const propertyManager = {
+            renderProperties: () => {
+                elements.propertiesGrid.innerHTML = '';
+                
+                if (filteredProperties.length === 0) {
+                    elements.propertiesGrid.innerHTML = `
+                        <div style="grid-column: 1 / -1; text-align: center; padding: 60px 20px;">
+                            <i class="fas fa-home" style="font-size: 60px; color: #e2e8f0; margin-bottom: 20px;"></i>
+                            <h3 style="color: var(--gray); margin-bottom: 15px;">No se encontraron propiedades</h3>
+                            <p style="color: var(--gray); margin-bottom: 25px;">Intenta con otros filtros o agrega una nueva propiedad.</p>
+                            <button class="btn" onclick="propertyManager.clearFilters()">
+                                <i class="fas fa-redo"></i> Ver Todas
+                            </button>
+                        </div>
+                    `;
+                    elements.propertiesCount.textContent = '0 propiedades encontradas';
+                    return;
+                }
+                
+                filteredProperties.forEach(property => {
+                    const propertyCard = propertyManager.createPropertyCard(property);
+                    elements.propertiesGrid.appendChild(propertyCard);
+                });
+                
+                elements.propertiesCount.textContent = `${filteredProperties.length} propiedad(es) encontrada(s)`;
+            },
+            
+            createPropertyCard: (property) => {
+                const card = document.createElement('div');
+                card.className = 'property-card';
+                card.dataset.id = property.id;
+                
+                const categoryNames = {
+                    casa: 'Casa',
+                    apartamento: 'Apartamento',
+                    local: 'Local Comercial',
+                    terreno: 'Terreno',
+                    oficina: 'Oficina'
+                };
+                
+                const priceFormatted = utils.formatPrice(property.price, property.type);
+                
+                card.innerHTML = `
+                    <div class="property-img">
+                        <img src="${property.image}" alt="${property.title}" loading="lazy">
+                        <div class="property-badge">${property.type === 'venta' ? 'En Venta' : 'En Alquiler'}</div>
+                    </div>
+                    <div class="property-content">
+                        <div class="property-price">${priceFormatted}</div>
+                        <h3 class="property-title">${property.title}</h3>
+                        <div class="property-location">
+                            <i class="fas fa-map-marker-alt"></i> ${property.location}
+                        </div>
+                        <p class="property-description">${property.description.substring(0, 100)}${property.description.length > 100 ? '...' : ''}</p>
+                        <div class="property-features">
+                            <div class="feature">
+                                <i class="fas fa-layer-group"></i>
+                                <span>${categoryNames[property.category] || property.category}</span>
+                            </div>
+                            ${property.rooms ? `
+                            <div class="feature">
+                                <i class="fas fa-bed"></i>
+                                <span>${property.rooms} hab</span>
+                            </div>
+                            ` : ''}
+                            ${property.bathrooms ? `
+                            <div class="feature">
+                                <i class="fas fa-bath"></i>
+                                <span>${property.bathrooms} baños</span>
+                            </div>
+                            ` : ''}
+                            ${property.area ? `
+                            <div class="feature">
+                                <i class="fas fa-ruler-combined"></i>
+                                <span>${property.area} m²</span>
+                            </div>
+                            ` : ''}
+                        </div>
+                        <div style="margin-top: 20px; display: flex; gap: 10px;">
+                            <button class="btn btn-outline" onclick="propertyManager.editProperty(${property.id})" style="flex: 1;">
+                                <i class="fas fa-edit"></i> Editar
+                            </button>
+                            <button class="btn btn-danger" onclick="propertyManager.deleteProperty(${property.id})" style="flex: 1;">
+                                <i class="fas fa-trash"></i> Eliminar
+                            </button>
+                        </div>
+                    </div>
+                `;
+                
+                return card;
+            },
+            
+            addProperty: (propertyData) => {
+                const newProperty = {
+                    id: properties.length > 0 ? Math.max(...properties.map(p => p.id)) + 1 : 1,
+                    ...propertyData,
+                    createdAt: new Date().toISOString().split('T')[0]
+                };
+                
+                properties.unshift(newProperty);
+                filteredProperties = [...properties];
+                propertyManager.renderProperties();
+                utils.showNotification('Propiedad agregada exitosamente');
+            },
+            
+            editProperty: (id) => {
+                const property = properties.find(p => p.id === id);
+                if (!property) return;
+                
+                isEditing = true;
+                currentEditId = id;
+                elements.modalTitle.textContent = 'Editar Propiedad';
+                
+                // Llenar formulario con datos de la propiedad
+                elements.propertyTitle.value = property.title;
+                elements.propertyCategory.value = property.category;
+                elements.propertyType.value = property.type;
+                elements.propertyPrice.value = property.price;
+                elements.propertyLocation.value = property.location;
+                elements.propertyArea.value = property.area || '';
+                elements.propertyRooms.value = property.rooms || '';
+                elements.propertyBathrooms.value = property.bathrooms || '';
+                elements.propertyDescription.value = property.description;
+                elements.propertyImage.value = property.image;
+                
+                propertyManager.openModal();
+            },
+            
+            updateProperty: (id, propertyData) => {
+                const index = properties.findIndex(p => p.id === id);
+                if (index === -1) return;
+                
+                properties[index] = { ...properties[index], ...propertyData };
+                filteredProperties = [...properties];
+                propertyManager.renderProperties();
+                utils.showNotification('Propiedad actualizada exitosamente');
+            },
+            
+            deleteProperty: (id) => {
+                if (!confirm('¿Estás seguro de que deseas eliminar esta propiedad?')) {
+                    return;
+                }
+                
+                properties = properties.filter(p => p.id !== id);
+                filteredProperties = filteredProperties.filter(p => p.id !== id);
+                propertyManager.renderProperties();
+                utils.showNotification('Propiedad eliminada exitosamente', 'success');
+            },
+            
+            openModal: () => {
+                elements.propertyModal.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            },
+            
+            closeModal: () => {
+                elements.propertyModal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+                utils.resetForm();
+            },
+            
+            applyFilters: () => {
+                const category = elements.categoryFilter.value;
+                const type = elements.typeFilter.value;
+                const price = elements.priceFilter.value;
+                const location = elements.locationFilter.value.toLowerCase();
+                
+                filteredProperties = properties.filter(property => {
+                    // Filtro por categoría
+                    if (category && property.category !== category) return false;
+                    
+                    // Filtro por tipo
+                    if (type && property.type !== type) return false;
+                    
+                    // Filtro por precio
+                    if (price && property.price > parseInt(price)) return false;
+                    
+                    // Filtro por ubicación
+                    if (location && !property.location.toLowerCase().includes(location)) return false;
+                    
+                    return true;
+                });
+                
+                propertyManager.renderProperties();
+            },
+            
+            clearFilters: () => {
+                elements.categoryFilter.value = '';
+                elements.typeFilter.value = '';
+                elements.priceFilter.value = '';
+                elements.locationFilter.value = '';
+                filteredProperties = [...properties];
+                propertyManager.renderProperties();
+            }
+        };
+
+        // ==============================================
+        // MANEJO DE EVENTOS
+        // ==============================================
+        const eventManager = {
+            init: () => {
+                // Menú móvil
+                elements.mobileMenuBtn.addEventListener('click', () => {
+                    elements.mainNav.classList.toggle('active');
+                });
+                
+                // Cerrar menú al hacer clic en enlace
+                document.querySelectorAll('#mainNav a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        elements.mainNav.classList.remove('active');
+                    });
+                });
+                
+                // Filtros
+                elements.applyFiltersBtn.addEventListener('click', propertyManager.applyFilters);
+                elements.clearFiltersBtn.addEventListener('click', propertyManager.clearFilters);
+                
+                // Modal
+                elements.openModalBtn.addEventListener('click', () => {
+                    utils.resetForm();
+                    propertyManager.openModal();
+                });
+                
+                elements.closeModalBtn.addEventListener('click', propertyManager.closeModal);
+                elements.cancelModalBtn.addEventListener('click', propertyManager.closeModal);
+                
+                // Cerrar modal al hacer clic fuera
+                elements.propertyModal.addEventListener('click', (e) => {
+                    if (e.target === elements.propertyModal) {
+                        propertyManager.closeModal();
+                    }
+                });
+                
+                // Formulario
+                elements.propertyForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    
+                    const errors = utils.validateForm();
+                    if (errors.length > 0) {
+                        alert('Errores:\n' + errors.join('\n'));
+                        return;
+                    }
+                    
+                    const propertyData = {
+                        title: elements.propertyTitle.value.trim(),
+                        category: elements.propertyCategory.value,
+                        type: elements.propertyType.value,
+                        price: parseFloat(elements.propertyPrice.value),
+                        location: elements.propertyLocation.value.trim(),
+                        area: elements.propertyArea.value ? parseFloat(elements.propertyArea.value) : null,
+                        rooms: elements.propertyRooms.value ? parseInt(elements.propertyRooms.value) : null,
+                        bathrooms: elements.propertyBathrooms.value ? parseInt(elements.propertyBathrooms.value) : null,
+                        description: elements.propertyDescription.value.trim(),
+                        image: elements.propertyImage.value.trim()
+                    };
+                    
+                    if (isEditing && currentEditId) {
+                        propertyManager.updateProperty(currentEditId, propertyData);
+                    } else {
+                        propertyManager.addProperty(propertyData);
+                    }
+                    
+                    propertyManager.closeModal();
+                });
+                
+                // Navegación suave
+                document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                    anchor.addEventListener('click', function(e) {
+                        const href = this.getAttribute('href');
+                        if (href === '#') return;
+                        
+                        e.preventDefault();
+                        const targetElement = document.querySelector(href);
+                        if (targetElement) {
+                            window.scrollTo({
+                                top: targetElement.offsetTop - 100,
+                                behavior: 'smooth'
+                            });
+                        }
+                    });
+                });
+                
+                // Inicializar propiedades
+                propertyManager.renderProperties();
+            }
+        };
+
+        // ==============================================
+        // INICIALIZACIÓN DE LA APLICACIÓN
+        // ==============================================
+        document.addEventListener('DOMContentLoaded', () => {
+            eventManager.init();
+        });
+    </script>
+</body>
+</html>
