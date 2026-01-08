@@ -5,7 +5,45 @@
     <meta name="description" content=meta name="description" content="Plataforma de inversión inmobiliaria en República Dominicana. Oportunidades premium para inversores extranjeros que buscan rentabilidad, plusvalía y seguridad jurídica.">
     <title>Inversión Inmobiliaria en República Dominicana | Dominican Investor</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
+    <style>/* === MENU DESPLEGABLE === */
+
+#mainNav {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+#mainNav li {
+  position: relative;
+}
+
+#mainNav a {
+  text-decoration: none;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #ffffff;
+  padding: 10px 0;
+  min-width: 200px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+
+.dropdown-content li {
+  padding: 6px 20px;
+}
+
+.dropdown-content li a {
+  white-space: nowrap;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
         /* ===== RESET Y VARIABLES ===== */
         :root {
             --primary: #2563eb;
@@ -1491,6 +1529,7 @@ para inversionistas extranjeros.</p>
 </body>
 
 </html>
+
 
 
 
