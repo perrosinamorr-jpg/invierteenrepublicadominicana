@@ -1,1163 +1,137 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Dominican Investor - Inversión Inmobiliaria Premium</title>
 
-    <!-- FUENTE EJECUTIVA -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
-    <style>
-        body {
-            font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-            font-size: 15px;
-            line-height: 1.6;
-            color: #1f2933;
-        }
-    </style>
-</head>
-    <meta charset="UTF-8">
-    <meta name="description" content="Plataforma de inversión inmobiliaria en República Dominicana. Oportunidades premium para inversores extranjeros que buscan rentabilidad, plusvalía y seguridad jurídica.">
-    <style>/* === MENU DESPLEGABLE PULIDO === */
-
-#mainNav {
-  list-style: none;
-  display: flex;
-  gap: 28px;
-  align-items: center;
-}
-
-#mainNav > li > a {
-  font-weight: 500;
-  padding: 8px 0;
-}
-
-#mainNav li {
-  position: relative;
-}
-
-.dropdown > a {
-  cursor: pointer;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  top: 120%;
-  left: 0;
-  background: #ffffff;
-  min-width: 220px;
-  border-radius: 6px;
-  padding: 8px 0;
-  box-shadow: 0 12px 24px rgba(0,0,0,0.12);
-  z-index: 1000;
-
-  opacity: 0;
-  transform: translateY(10px);
-  transition: opacity 0.25s ease, transform 0.25s ease;
-}
-
-.dropdown-content li {
-  padding: 0;
-}
-
-.dropdown-content li a {
-  display: block;
-  padding: 10px 22px;
-  font-size: 14px;
-  color: #333;
-}
-
-.dropdown-content li a:hover {
-  background: #f4f6f8;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-  opacity: 1;
-  transform: translateY(0);
-}
-h1 {
-  font-size: 44px;
-  font-weight: 600;
-  letter-spacing: -0.5px;
-  line-height: 1.2;
-}
-        /* ===== RESET Y VARIABLES ===== */
-        :root {
-            --primary: #2563eb;
-            --secondary: #0ea5e9;
-            --dark: #1e293b;
-            --light: #f8fafc;
-            --gray: #64748b;
-            --success: #10b981;
-            --danger: #ef4444;
-            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-            --radius: 8px;
-            --transition: all 0.3s ease;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--dark);
-            background-color: var(--light);
-        }
-
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 15px;
-        }
-
-        /* ===== TIPOGRAFÍA Y BOTONES ===== */
-        h1, h2, h3, h4 {
-            font-weight: 700;
-            line-height: 1.2;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 10px 24px;
-            background-color: var(--primary);
-            color: white;
-            border: none;
-            border-radius: var(--radius);
-            font-weight: 600;
-            cursor: pointer;
-            text-decoration: none;
-            transition: var(--transition);
-            font-size: 16px;
-        }
-
-        .btn:hover {
-            background-color: #1d4ed8;
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .btn-outline {
-            background-color: transparent;
-            border: 2px solid var(--primary);
-            color: var(--primary);
-        }
-
-        .btn-outline:hover {
-            background-color: var(--primary);
-            color: white;
-        }
-
-        .btn-success {
-            background-color: var(--success);
-        }
-
-        .btn-success:hover {
-            background-color: #0da271;
-        }
-
-        .btn-danger {
-            background-color: var(--danger);
-        }
-
-        .btn-danger:hover {
-            background-color: #dc2626;
-        }
-
-      <!-- ===== HEADER EJECUTIVO COMPLETO ===== -->
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dominican Investor</title>
-
-    <!-- Font Awesome para íconos -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-    <!-- Fuentes Google profesionales (elegantes y limpias) -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
     <style>
-        :root {
-            --primary: #0a2540;       /* Azul oscuro ejecutivo */
-            --accent: #1b5cff;        /* Azul vibrante para hover y botones */
-            --text: #425466;          /* Texto principal */
-            --light: #f8fbff;         /* Fondo claro */
-            --white: #ffffff;
-            --shadow: 0 10px 30px rgba(0,0,0,0.08);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            color: var(--text);
-            background: var(--white);
-        }
-
-        .container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* ===== HEADER PROFESIONAL (pegajoso/sticky) ===== */
-        header {
-            background: var(--white);
-            border-bottom: 1px solid #eef2f6;
-            padding: 20px 0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: var(--shadow);
-            transition: all 0.3s ease;
-        }
-
-        .header-container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-
-        /* Logo refinado */
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            text-decoration: none;
-            color: var(--primary);
-        }
-
-        .logo-icon {
-            font-size: 42px;
-            color: var(--accent);
-        }
-
-        .logo-text h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 32px;
-            font-weight: 700;
-            margin: 0;
-            line-height: 1;
-        }
-
-        .logo-text .slogan {
-            font-size: 14px;
-            color: #6b7280;
-            font-weight: 500;
-            margin-top: 4px;
-        }
-
-        /* Menú principal */
-        #mainNav {
-            display: flex;
-            gap: 40px;
-            list-style: none;
-            margin: 0;
-        }
-
-        #mainNav a {
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 15.5px;
-            color: var(--primary);
-            padding: 10px 0;
-            position: relative;
-            transition: color 0.3s ease;
-        }
-
-        #mainNav a:hover,
-        #mainNav a.active {
-            color: var(--accent);
-        }
-
-        #mainNav a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 3px;
-            bottom: -8px;
-            left: 0;
-            background: var(--accent);
-            transition: width 0.3s ease;
-        }
-
-        #mainNav a:hover::after,
-        #mainNav a.active::after {
-            width: 100%;
-        }
-
-        /* Dropdown profesional */
-        .dropdown {
-            position: relative;
-        }
-
-        .dropdown-menu {
-            position: absolute;
-            top: 100%;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--white);
-            min-width: 240px;
-            padding: 16px 0;
-            border-radius: 12px;
-            box-shadow: var(--shadow);
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-            margin-top: 10px;
-            border: 1px solid #f0f2f5;
-        }
-
-        .dropdown:hover .dropdown-menu {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .dropdown-menu a {
-            display: block;
-            padding: 12px 28px;
-            color: var(--primary);
-            font-size: 15px;
-            transition: all 0.2s;
-        }
-
-        .dropdown-menu a:hover {
-            background: var(--light);
-            color: var(--accent);
-            padding-left: 36px;
-        }
-
-        /* Contacto rápido en header */
-        .header-contact {
-            font-size: 14px;
-            color: var(--primary);
-            white-space: nowrap;
-        }
-
-        .header-contact a {
-            color: var(--accent);
-            text-decoration: none;
-        }
-
-        .header-contact a:hover {
-            text-decoration: underline;
-        }
-
-        /* Responsive básico */
-        @media (max-width: 992px) {
-            .header-container {
-                flex-direction: column;
-                gap: 20px;
-                text-align: center;
-            }
-
-            #mainNav {
-                gap: 24px;
-                justify-content: center;
-                flex-wrap: wrap;
-            }
-
-            .dropdown-menu {
-                left: 0;
-                transform: translateX(0);
-                width: 100%;
-                text-align: center;
-            }
-        }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #333; }
+        .navbar { background: #0a2540; }
+        .navbar-brand { font-weight: bold; color: white !important; font-size: 1.6rem; }
+        .hero { background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80'); background-size: cover; background-position: center; color: white; padding: 150px 0; text-align: center; }
+        .hero h1 { font-size: 3.5rem; margin-bottom: 20px; }
+        .section-title { text-align: center; margin: 60px 0 40px; font-weight: bold; color: #0a2540; }
+        .property-card { margin-bottom: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); border: none; }
+        .property-card img { height: 220px; object-fit: cover; }
+        .btn-primary { background: #1b5cff; border: none; }
+        footer { background: #0a2540; color: white; padding: 40px 0; text-align: center; margin-top: 60px; }
     </style>
 </head>
 <body>
 
-    <header>
-        <div class="container header-container">
-
-            <!-- Logo -->
-            <a href="#inicio" class="logo">
-                <i class="fas fa-home logo-icon"></i>
-                <div class="logo-text">
-                    <h1>Dominican Investor</h1>
-                    <div class="slogan">Inversión inmobiliaria premium en República Dominicana</div>
-                </div>
+    <!-- Header / Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-home mr-2"></i> Dominican Investor
             </a>
-
-            <!-- Menú -->
-            <nav>
-                <ul id="mainNav">
-                    <li><a href="#inicio" class="active">Inicio</a></li>
-                    <li><a href="#propiedades">Oportunidades</a></li>
-                    <li class="dropdown">
-                        <a href="#">Inversión ▾</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#propiedades">Oportunidades</a></li>
-                            <li><a href="#asesoria">Asesoría</a></li>
-                        </ul>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#propiedades">Oportunidades</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="inversionDropdown" data-toggle="dropdown">Inversión</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#oportunidades">Oportunidades</a>
+                            <a class="dropdown-item" href="#asesoria">Asesoría</a>
+                        </div>
                     </li>
-                    <li class="dropdown">
-                        <a href="#">La Firma ▾</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#nosotros">Quiénes Somos</a></li>
-                            <li><a href="#equipo">Nuestro Equipo</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#contacto">Contacto</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#firma">La Firma</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
                 </ul>
-            </nav>
-
-            <!-- Contacto rápido -->
-            <div class="header-contact">
-                <a href="tel:+18095712100">+1 809 571 2100</a> | 
-                <a href="mailto:info@dominicainvestor.com">info@dominicainvestor.com</a>
             </div>
-
         </div>
-    </header>
+    </nav>
 
-    <!-- Aquí continúa el resto de tu página (hero, propiedades, etc.) -->
-
-</body>
-</html>
-    
-    <!-- El resto de tu página va aquí -->
-</body>
-</html>
-    <!-- ===== HERO ===== -->
+    <!-- Hero Section -->
     <section class="hero" id="inicio">
         <div class="container">
-            <h1>Dominican Investor</h1>
-            <p>Descubre oportunidades de inversión inmobiliaria en República Dominicana,
-seleccionadas por su alta rentabilidad, potencial de plusvalía y seguridad jurídica
-para inversionistas extranjeros.</p>
-            <a href="#propiedades" class="btn">Ver oportunidades de inversión</a>
+            <h1>Invierte en República Dominicana</h1>
+            <p class="lead">Oportunidades premium con alta rentabilidad, plusvalía y seguridad jurídica total para inversionistas extranjeros.</p>
+            <a href="#propiedades" class="btn btn-primary btn-lg mt-4">Ver Oportunidades</a>
         </div>
     </section>
 
-    <!-- ===== FILTROS ===== -->
-    <section class="filters-section">
+    <!-- Propiedades Section -->
+    <section id="propiedades" class="py-5">
         <div class="container">
-            <div class="filters">
-                <div class="filter-row">
-                    <div class="filter-group">
-                        <label for="categoryFilter">Categoría</label>
-                        <select id="categoryFilter">
-                            <option value="">Todas las categorías</option>
-                            <option value="casa">Casas</option>
-                            <option value="apartamento">Apartamentos</option>
-                            <option value="local">Locales Comerciales</option>
-                            <option value="terreno">Terrenos</option>
-                            <option value="oficina">Oficinas</option>
-                        </select>
-                    </div>
-                    
-                    <div class="filter-group">
-                        <label for="typeFilter">Tipo</label>
-                        <select id="typeFilter">
-                            <option value="">Compra o Alquiler</option>
-                            <option value="venta">En Venta</option>
-                            <option value="alquiler">En Alquiler</option>
-                        </select>
-                    </div>
-                    
-                    <div class="filter-group">
-                        <label for="priceFilter">Precio Máximo</label>
-                        <select id="priceFilter">
-                            <option value="">Sin límite</option>
-                            <option value="50000">$50,000</option>
-                            <option value="100000">$100,000</option>
-                            <option value="200000">$200,000</option>
-                            <option value="500000">$500,000</option>
-                            <option value="1000000">$1,000,000</option>
-                        </select>
-                    </div>
-                    
-                    <div class="filter-group">
-                        <label for="locationFilter">Ubicación</label>
-                        <input type="text" id="locationFilter" placeholder="Zonas de alto potencial">
-                    </div>
-                </div>
-                
-                <div class="filter-actions">
-                    <button class="btn" id="applyFiltersBtn">
-                        <i class="fas fa-search"></i> Analizar Oportunidades
-                    </button>
-                    <button class="btn btn-outline" id="clearFiltersBtn">
-                        <i class="fas fa-times"></i> Limpiar Filtros
-                    </button>
-                </div>
-            </div>
-        </div>
-    </section>
+            <h2 class="section-title">Propiedades Destacadas</h2>
 
-    <!-- ===== PROPIEDADES ===== -->
-    <section class="properties-section" id="propiedades">
-        <div class="container">
-            <div class="section-header">
-                <div>
-                    <h2 class="section-title">Propiedades Destacadas</h2>
-                    <div class="properties-count" id="propertiesCount">Cargando propiedades...</div>
+            <!-- Filtros simples -->
+            <div class="row mb-5 justify-content-center">
+                <div class="col-md-10">
+                    <form class="form-inline flex-wrap justify-content-center">
+                        <select class="form-control mr-2 mb-2" style="width:180px;">
+                            <option>Todas las categorías</option>
+                        </select>
+                        <select class="form-control mr-2 mb-2" style="width:180px;">
+                            <option>Compra o Alquiler</option>
+                        </select>
+                        <input type="number" class="form-control mr-2 mb-2" placeholder="Precio Máximo" style="width:180px;">
+                        <select class="form-control mr-2 mb-2" style="width:180px;">
+                            <option>Zonas de alto potencial</option>
+                        </select>
+                        <button type="submit" class="btn btn-primary mb-2">Analizar</button>
+                        <button type="button" class="btn btn-secondary mb-2 ml-2">Limpiar</button>
+                    </form>
                 </div>
-                <button class="btn btn-success" id="openModalBtn">
-                    <i class="fas fa-plus"></i> Nueva Propiedad
-                </button>
             </div>
-            
-            <div class="properties-grid" id="propertiesGrid">
-                <!-- Las propiedades se cargarán aquí dinámicamente -->
+
+            <!-- Grid de propiedades -->
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card property-card">
+                        <img src="https://images.unsplash.com/photo-1580587771525-78b9d3f36c2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" class="card-img-top" alt="Propiedad 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Casa Moderna en Punta Cana</h5>
+                            <p class="card-text">$450,000 • 4 hab • 3 baños • 280m²</p>
+                            <a href="#" class="btn btn-primary">Ver Detalles</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Agrega más tarjetas similares aquí -->
+                <div class="col-md-4">
+                    <div class="card property-card">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" class="card-img-top" alt="Propiedad 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Apartamento en Santo Domingo</h5>
+                            <p class="card-text">$220,000 • 3 hab • 2 baños • 150m²</p>
+                            <a href="#" class="btn btn-primary">Ver Detalles</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Repite para más propiedades -->
+            </div>
+
+            <div class="text-center mt-5">
+                <button class="btn btn-success btn-lg">+ Nueva Propiedad</button>
             </div>
         </div>
     </section>
 
-    <!-- ===== MODAL PARA AGREGAR PROPIEDAD ===== -->
-    <div class="modal-overlay" id="propertyModal">
-        <div class="modal">
-            <div class="modal-header">
-                <h2 id="modalTitle">Agregar Nueva Propiedad</h2>
-                <button class="close-modal" id="closeModalBtn">&times;</button>
-            </div>
-            <div class="modal-body">
-                <form id="propertyForm">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="propertyTitle">Título *</label>
-                            <input type="text" id="propertyTitle" placeholder="Ej: Casa moderna de 3 habitaciones" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="propertyCategory">Categoría *</label>
-                            <select id="propertyCategory" required>
-                                <option value="">Seleccionar categoría</option>
-                                <option value="casa">Casa</option>
-                                <option value="apartamento">Apartamento</option>
-                                <option value="local">Local Comercial</option>
-                                <option value="terreno">Terreno</option>
-                                <option value="oficina">Oficina</option>
-                            </select>
-                        </div>
-                    </div>
-                    
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="propertyType">Tipo *</label>
-                            <select id="propertyType" required>
-                                <option value="">Seleccionar tipo</option>
-                                <option value="venta">Venta</option>
-                                <option value="alquiler">Alquiler</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="propertyPrice">Precio * ($)</label>
-                            <input type="number" id="propertyPrice" placeholder="Ej: 150000" min="0" required>
-                        </div>
-                    </div>
-                    
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="propertyLocation">Ubicación *</label>
-                            <input type="text" id="propertyLocation" placeholder="Ej: Centro, Zona Norte" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="propertyArea">Área (m²)</label>
-                            <input type="number" id="propertyArea" placeholder="Ej: 120" min="0">
-                        </div>
-                    </div>
-                    
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="propertyRooms">Habitaciones</label>
-                            <input type="number" id="propertyRooms" placeholder="Ej: 3" min="0">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="propertyBathrooms">Baños</label>
-                            <input type="number" id="propertyBathrooms" placeholder="Ej: 2" min="0">
-                        </div>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="propertyDescription">Descripción *</label>
-                        <textarea id="propertyDescription" placeholder="Describe la propiedad en detalle..." required></textarea>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="propertyImage">URL de la imagen *</label>
-                        <input type="text" id="propertyImage" placeholder="https://ejemplo.com/imagen.jpg" required>
-                    </div>
-                    
-                    <div class="form-actions">
-                        <button type="button" class="btn btn-outline" id="cancelModalBtn">Cancelar</button>
-                        <button type="submit" class="btn btn-success">
-                            <i class="fas fa-save"></i> Guardar Propiedad
-                        </button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-
-    <!-- ===== FOOTER ===== -->
-    <footer id="contacto">
+    <!-- Footer -->
+    <footer>
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-column">
-                    <h3>Dominican Investor</h3>
-                    <p>Plataforma de inversión inmobiliaria en República Dominicana para inversores extranjeros.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-                
-                <div class="footer-column">
-                    <h3>Enlaces Rápidos</h3>
-                    <ul class="footer-links">
-                        <li><a href="#inicio">Inicio</a></li>
-                        <li><a href="#propiedades">Propiedades</a></li>
-                        <li><a href="#servicios">Servicios</a></li>
-                        <li><a href="#nosotros">Nosotros</a></li>
-                        <li><a href="#contacto">Contacto</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-column">
-                    <h3>Contacto</h3>
-                    <ul class="footer-links">
-                        <li><i class="fas fa-map-marker-alt"></i> C/20 Esquina Duarte Municipio La Caleta, Boca Chica. R.D.</li>
-                        <li><i class="fas fa-phone"></i> +1 (829) 719-4086</li>
-                        <li><i class="fas fa-envelope"></i> dominicaninvestor@outlook.com</li>
-                        <li><i class="fas fa-clock"></i> Lun-Vie: 8:00 a.m. - 5:00 p.m.</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="copyright">
-                &copy; © 2026 Dominican Investor. Todos los derechos reservados.
-            </div>
+            <p>&copy; 2026 Dominican Investor. Todos los derechos reservados.</p>
         </div>
     </footer>
 
-    <!-- ===== JAVASCRIPT ===== -->
-    <script>
-        // ==============================================
-        // CONFIGURACIÓN Y DATOS INICIALES
-        // ==============================================
-        const propertiesData = [
-            {
-                id: 1,
-                title: "Casa moderna en zona residencial",
-                category: "casa",
-                type: "venta",
-                price: 250000,
-                location: "Zona Norte",
-                description: "Hermosa casa con 3 habitaciones, 2 baños, amplio jardín y cochera para 2 autos. Acabados de lujo y excelente ubicación cerca de escuelas y centros comerciales.",
-                image: "https://images.unsplash.com/photo-1613490493576-7fde63acd811?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-                area: 180,
-                rooms: 3,
-                bathrooms: 2,
-                createdAt: "2024-01-15"
-            },
-            {
-                id: 2,
-                title: "Apartamento de lujo en el centro",
-                category: "apartamento",
-                type: "alquiler",
-                price: 1200,
-                location: "Centro Histórico",
-                description: "Elegante apartamento completamente amueblado con vista panorámica a la ciudad. Seguridad 24/7, gimnasio y piscina incluidos.",
-                image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-                area: 95,
-                rooms: 2,
-                bathrooms: 1,
-                createdAt: "2024-02-10"
-            },
-            {
-                id: 3,
-                title: "Local comercial en zona de alto tráfico",
-                category: "local",
-                type: "venta",
-                price: 180000,
-                location: "Zona Comercial Este",
-                description: "Local ideal para negocio con excelente ubicación, alto tráfico de personas y amplio espacio para mostrador y almacenamiento.",
-                image: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-                area: 150,
-                rooms: 1,
-                bathrooms: 1,
-                createdAt: "2024-01-28"
-            },
-            {
-                id: 4,
-                title: "Terreno plano para construcción",
-                category: "terreno",
-                type: "venta",
-                price: 75000,
-                location: "Zona Sur",
-                description: "Terreno completamente plano, ideal para construcción residencial o comercial. Servicios básicos disponibles en la zona.",
-                image: "https://images.unsplash.com/photo-1586773860418-dc22f8b874bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-                area: 500,
-                rooms: 0,
-                bathrooms: 0,
-                createdAt: "2024-03-05"
-            }
-        ];
-
-        // ==============================================
-        // VARIABLES GLOBALES
-        // ==============================================
-        let properties = [...propertiesData];
-        let filteredProperties = [...properties];
-        let isEditing = false;
-        let currentEditId = null;
-
-        // ==============================================
-        // ELEMENTOS DOM
-        // ==============================================
-        const elements = {
-            // Navegación
-            mobileMenuBtn: document.getElementById('mobileMenuBtn'),
-            mainNav: document.getElementById('mainNav'),
-            
-            // Propiedades
-            propertiesGrid: document.getElementById('propertiesGrid'),
-            propertiesCount: document.getElementById('propertiesCount'),
-            
-            // Filtros
-            categoryFilter: document.getElementById('categoryFilter'),
-            typeFilter: document.getElementById('typeFilter'),
-            priceFilter: document.getElementById('priceFilter'),
-            locationFilter: document.getElementById('locationFilter'),
-            applyFiltersBtn: document.getElementById('applyFiltersBtn'),
-            clearFiltersBtn: document.getElementById('clearFiltersBtn'),
-            
-            // Modal
-            propertyModal: document.getElementById('propertyModal'),
-            modalTitle: document.getElementById('modalTitle'),
-            propertyForm: document.getElementById('propertyForm'),
-            openModalBtn: document.getElementById('openModalBtn'),
-            closeModalBtn: document.getElementById('closeModalBtn'),
-            cancelModalBtn: document.getElementById('cancelModalBtn'),
-            
-            // Formulario
-            propertyTitle: document.getElementById('propertyTitle'),
-            propertyCategory: document.getElementById('propertyCategory'),
-            propertyType: document.getElementById('propertyType'),
-            propertyPrice: document.getElementById('propertyPrice'),
-            propertyLocation: document.getElementById('propertyLocation'),
-            propertyArea: document.getElementById('propertyArea'),
-            propertyRooms: document.getElementById('propertyRooms'),
-            propertyBathrooms: document.getElementById('propertyBathrooms'),
-            propertyDescription: document.getElementById('propertyDescription'),
-            propertyImage: document.getElementById('propertyImage')
-        };
-
-        // ==============================================
-        // FUNCIONES DE UTILIDAD
-        // ==============================================
-        const utils = {
-            formatPrice: (price, type) => {
-                const formatted = new Intl.NumberFormat('es-ES').format(price);
-                return type === 'alquiler' ? `$${formatted}/mes` : `$${formatted}`;
-            },
-            
-            showNotification: (message, type = 'success') => {
-                // Crear elemento de notificación
-                const notification = document.createElement('div');
-                notification.className = `notification ${type}`;
-                notification.textContent = message;
-                notification.style.cssText = `
-                    position: fixed;
-                    top: 20px;
-                    right: 20px;
-                    padding: 15px 25px;
-                    border-radius: 8px;
-                    color: white;
-                    font-weight: 600;
-                    z-index: 3000;
-                    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-                    animation: slideIn 0.3s ease, fadeOut 0.3s ease 2.7s forwards;
-                `;
-                
-                if (type === 'success') {
-                    notification.style.backgroundColor = '#10b981';
-                } else if (type === 'error') {
-                    notification.style.backgroundColor = '#ef4444';
-                } else {
-                    notification.style.backgroundColor = '#3b82f6';
-                }
-                
-                // Animaciones
-                const style = document.createElement('style');
-                style.textContent = `
-                    @keyframes slideIn {
-                        from { transform: translateX(100%); opacity: 0; }
-                        to { transform: translateX(0); opacity: 1; }
-                    }
-                    @keyframes fadeOut {
-                        from { opacity: 1; }
-                        to { opacity: 0; visibility: hidden; }
-                    }
-                `;
-                document.head.appendChild(style);
-                
-                document.body.appendChild(notification);
-                
-                // Eliminar después de 3 segundos
-                setTimeout(() => {
-                    if (notification.parentNode) {
-                        notification.parentNode.removeChild(notification);
-                    }
-                }, 3000);
-            },
-            
-            validateForm: () => {
-                const errors = [];
-                const fields = [
-                    { element: elements.propertyTitle, name: 'Título' },
-                    { element: elements.propertyCategory, name: 'Categoría' },
-                    { element: elements.propertyType, name: 'Tipo' },
-                    { element: elements.propertyPrice, name: 'Precio' },
-                    { element: elements.propertyLocation, name: 'Ubicación' },
-                    { element: elements.propertyDescription, name: 'Descripción' },
-                    { element: elements.propertyImage, name: 'URL de la imagen' }
-                ];
-                
-                fields.forEach(field => {
-                    if (!field.element.value.trim()) {
-                        errors.push(`${field.name} es requerido`);
-                    }
-                });
-                
-                if (elements.propertyPrice.value && parseFloat(elements.propertyPrice.value) <= 0) {
-                    errors.push('El precio debe ser mayor a 0');
-                }
-                
-                return errors;
-            },
-            
-            resetForm: () => {
-                elements.propertyForm.reset();
-                isEditing = false;
-                currentEditId = null;
-                elements.modalTitle.textContent = 'Agregar Nueva Propiedad';
-            }
-        };
-
-        // ==============================================
-        // FUNCIONES DE PROPIEDADES
-        // ==============================================
-        const propertyManager = {
-            renderProperties: () => {
-                elements.propertiesGrid.innerHTML = '';
-                
-                if (filteredProperties.length === 0) {
-                    elements.propertiesGrid.innerHTML = `
-                        <div style="grid-column: 1 / -1; text-align: center; padding: 60px 20px;">
-                            <i class="fas fa-home" style="font-size: 60px; color: #e2e8f0; margin-bottom: 20px;"></i>
-                            <h3 style="color: var(--gray); margin-bottom: 15px;">No se encontraron propiedades</h3>
-                            <p style="color: var(--gray); margin-bottom: 25px;">Intenta con otros filtros o agrega una nueva propiedad.</p>
-                            <button class="btn" onclick="propertyManager.clearFilters()">
-                                <i class="fas fa-redo"></i> Ver Todas
-                            </button>
-                        </div>
-                    `;
-                    elements.propertiesCount.textContent = '0 propiedades encontradas';
-                    return;
-                }
-                
-                filteredProperties.forEach(property => {
-                    const propertyCard = propertyManager.createPropertyCard(property);
-                    elements.propertiesGrid.appendChild(propertyCard);
-                });
-                
-                elements.propertiesCount.textContent = `${filteredProperties.length} propiedad(es) encontrada(s)`;
-            },
-            
-            createPropertyCard: (property) => {
-                const card = document.createElement('div');
-                card.className = 'property-card';
-                card.dataset.id = property.id;
-                
-                const categoryNames = {
-                    casa: 'Casa',
-                    apartamento: 'Apartamento',
-                    local: 'Local Comercial',
-                    terreno: 'Terreno',
-                    oficina: 'Oficina'
-                };
-                
-                const priceFormatted = utils.formatPrice(property.price, property.type);
-                
-                card.innerHTML = `
-                    <div class="property-img">
-                        <img src="${property.image}" alt="${property.title}" loading="lazy">
-                        <div class="property-badge">${property.type === 'venta' ? 'En Venta' : 'En Alquiler'}</div>
-                    </div>
-                    <div class="property-content">
-                        <div class="property-price">${priceFormatted}</div>
-                        <h3 class="property-title">${property.title}</h3>
-                        <div class="property-location">
-                            <i class="fas fa-map-marker-alt"></i> ${property.location}
-                        </div>
-                        <p class="property-description">${property.description.substring(0, 100)}${property.description.length > 100 ? '...' : ''}</p>
-                        <div class="property-features">
-                            <div class="feature">
-                                <i class="fas fa-layer-group"></i>
-                                <span>${categoryNames[property.category] || property.category}</span>
-                            </div>
-                            ${property.rooms ? `
-                            <div class="feature">
-                                <i class="fas fa-bed"></i>
-                                <span>${property.rooms} hab</span>
-                            </div>
-                            ` : ''}
-                            ${property.bathrooms ? `
-                            <div class="feature">
-                                <i class="fas fa-bath"></i>
-                                <span>${property.bathrooms} baños</span>
-                            </div>
-                            ` : ''}
-                            ${property.area ? `
-                            <div class="feature">
-                                <i class="fas fa-ruler-combined"></i>
-                                <span>${property.area} m²</span>
-                            </div>
-                            ` : ''}
-                        </div>
-                        <div style="margin-top: 20px; display: flex; gap: 10px;">
-                            <button class="btn btn-outline" onclick="propertyManager.editProperty(${property.id})" style="flex: 1;">
-                                <i class="fas fa-edit"></i> Editar
-                            </button>
-                            <button class="btn btn-danger" onclick="propertyManager.deleteProperty(${property.id})" style="flex: 1;">
-                                <i class="fas fa-trash"></i> Eliminar
-                            </button>
-                        </div>
-                    </div>
-                `;
-                
-                return card;
-            },
-            
-            addProperty: (propertyData) => {
-                const newProperty = {
-                    id: properties.length > 0 ? Math.max(...properties.map(p => p.id)) + 1 : 1,
-                    ...propertyData,
-                    createdAt: new Date().toISOString().split('T')[0]
-                };
-                
-                properties.unshift(newProperty);
-                filteredProperties = [...properties];
-                propertyManager.renderProperties();
-                utils.showNotification('Propiedad agregada exitosamente');
-            },
-            
-            editProperty: (id) => {
-                const property = properties.find(p => p.id === id);
-                if (!property) return;
-                
-                isEditing = true;
-                currentEditId = id;
-                elements.modalTitle.textContent = 'Editar Propiedad';
-                
-                // Llenar formulario con datos de la propiedad
-                elements.propertyTitle.value = property.title;
-                elements.propertyCategory.value = property.category;
-                elements.propertyType.value = property.type;
-                elements.propertyPrice.value = property.price;
-                elements.propertyLocation.value = property.location;
-                elements.propertyArea.value = property.area || '';
-                elements.propertyRooms.value = property.rooms || '';
-                elements.propertyBathrooms.value = property.bathrooms || '';
-                elements.propertyDescription.value = property.description;
-                elements.propertyImage.value = property.image;
-                
-                propertyManager.openModal();
-            },
-            
-            updateProperty: (id, propertyData) => {
-                const index = properties.findIndex(p => p.id === id);
-                if (index === -1) return;
-                
-                properties[index] = { ...properties[index], ...propertyData };
-                filteredProperties = [...properties];
-                propertyManager.renderProperties();
-                utils.showNotification('Propiedad actualizada exitosamente');
-            },
-            
-            deleteProperty: (id) => {
-                if (!confirm('¿Estás seguro de que deseas eliminar esta propiedad?')) {
-                    return;
-                }
-                
-                properties = properties.filter(p => p.id !== id);
-                filteredProperties = filteredProperties.filter(p => p.id !== id);
-                propertyManager.renderProperties();
-                utils.showNotification('Propiedad eliminada exitosamente', 'success');
-            },
-            
-            openModal: () => {
-                elements.propertyModal.style.display = 'flex';
-                document.body.style.overflow = 'hidden';
-            },
-            
-            closeModal: () => {
-                elements.propertyModal.style.display = 'none';
-                document.body.style.overflow = 'auto';
-                utils.resetForm();
-            },
-            
-            applyFilters: () => {
-                const category = elements.categoryFilter.value;
-                const type = elements.typeFilter.value;
-                const price = elements.priceFilter.value;
-                const location = elements.locationFilter.value.toLowerCase();
-                
-                filteredProperties = properties.filter(property => {
-                    // Filtro por categoría
-                    if (category && property.category !== category) return false;
-                    
-                    // Filtro por tipo
-                    if (type && property.type !== type) return false;
-                    
-                    // Filtro por precio
-                    if (price && property.price > parseInt(price)) return false;
-                    
-                    // Filtro por ubicación
-                    if (location && !property.location.toLowerCase().includes(location)) return false;
-                    
-                    return true;
-                });
-                
-                propertyManager.renderProperties();
-            },
-            
-            clearFilters: () => {
-                elements.categoryFilter.value = '';
-                elements.typeFilter.value = '';
-                elements.priceFilter.value = '';
-                elements.locationFilter.value = '';
-                filteredProperties = [...properties];
-                propertyManager.renderProperties();
-            }
-        };
-
-        // ==============================================
-        // MANEJO DE EVENTOS
-        // ==============================================
-        const eventManager = {
-            init: () => {
-                // Menú móvil
-                elements.mobileMenuBtn.addEventListener('click', () => {
-                    elements.mainNav.classList.toggle('active');
-                });
-                
-                // Cerrar menú al hacer clic en enlace
-                document.querySelectorAll('#mainNav a').forEach(link => {
-                    link.addEventListener('click', () => {
-                        elements.mainNav.classList.remove('active');
-                    });
-                });
-                
-                // Filtros
-                elements.applyFiltersBtn.addEventListener('click', propertyManager.applyFilters);
-                elements.clearFiltersBtn.addEventListener('click', propertyManager.clearFilters);
-                
-                // Modal
-                elements.openModalBtn.addEventListener('click', () => {
-                    utils.resetForm();
-                    propertyManager.openModal();
-                });
-                
-                elements.closeModalBtn.addEventListener('click', propertyManager.closeModal);
-                elements.cancelModalBtn.addEventListener('click', propertyManager.closeModal);
-                
-                // Cerrar modal al hacer clic fuera
-                elements.propertyModal.addEventListener('click', (e) => {
-                    if (e.target === elements.propertyModal) {
-                        propertyManager.closeModal();
-                    }
-                });
-                
-                // Formulario
-                elements.propertyForm.addEventListener('submit', (e) => {
-                    e.preventDefault();
-                    
-                    const errors = utils.validateForm();
-                    if (errors.length > 0) {
-                        alert('Errores:\n' + errors.join('\n'));
-                        return;
-                    }
-                    
-                    const propertyData = {
-                        title: elements.propertyTitle.value.trim(),
-                        category: elements.propertyCategory.value,
-                        type: elements.propertyType.value,
-                        price: parseFloat(elements.propertyPrice.value),
-                        location: elements.propertyLocation.value.trim(),
-                        area: elements.propertyArea.value ? parseFloat(elements.propertyArea.value) : null,
-                        rooms: elements.propertyRooms.value ? parseInt(elements.propertyRooms.value) : null,
-                        bathrooms: elements.propertyBathrooms.value ? parseInt(elements.propertyBathrooms.value) : null,
-                        description: elements.propertyDescription.value.trim(),
-                        image: elements.propertyImage.value.trim()
-                    };
-                    
-                    if (isEditing && currentEditId) {
-                        propertyManager.updateProperty(currentEditId, propertyData);
-                    } else {
-                        propertyManager.addProperty(propertyData);
-                    }
-                    
-                    propertyManager.closeModal();
-                });
-                
-                // Navegación suave
-                document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                    anchor.addEventListener('click', function(e) {
-                        const href = this.getAttribute('href');
-                        if (href === '#') return;
-                        
-                        e.preventDefault();
-                        const targetElement = document.querySelector(href);
-                        if (targetElement) {
-                            window.scrollTo({
-                                top: targetElement.offsetTop - 100,
-                                behavior: 'smooth'
-                            });
-                        }
-                    });
-                });
-                
-                // Inicializar propiedades
-                propertyManager.renderProperties();
-            }
-        };
-
-        // ==============================================
-        // INICIALIZACIÓN DE LA APLICACIÓN
-        // ==============================================
-        document.addEventListener('DOMContentLoaded', () => {
-            eventManager.init();
-        });
-    </script>
+    <!-- Bootstrap JS y dependencias -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
-
 </html>
-
-
 
 
 
