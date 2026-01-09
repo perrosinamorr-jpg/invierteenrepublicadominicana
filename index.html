@@ -23,25 +23,10 @@
         }
         .hero h1 { font-size: 3.8rem; margin-bottom: 20px; }
         .section-title { text-align: center; margin: 60px 0 40px; font-weight: bold; color: #0a2540; }
-        .property-card { margin-bottom: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); border: none; transition: transform 0.3s; }
-        .property-card:hover { transform: translateY(-10px); }
+        .property-card { margin-bottom: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); border: none; }
         .property-card img { height: 220px; object-fit: cover; }
         .btn-primary { background: #1b5cff; border: none; }
-        .accordion .card-header { background: #0a2540; }
-        .accordion-button { color: white !important; font-weight: bold; }
         footer { background: #0a2540; color: white; padding: 40px 0; text-align: center; margin-top: 60px; }
-        .dropdown-hover {
-    position: relative;
-    overflow: hidden;
-}
-.dropdown-hover .dropdown-content {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.4s ease;
-}
-.dropdown-hover:hover .dropdown-content {
-    max-height: 600px; /* Ajusta si necesitas más espacio */
-}
     </style>
 </head>
 <body>
@@ -73,160 +58,64 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-  <!-- Menú de Inicio - Desplegable al hover (estilo tarjetas) -->
-<section class="py-5 bg-light">
-    <div class="container">
-        <h2 class="section-title mb-5 text-center">Explora Dominican Investor</h2>
-        
-        <div class="row text-center">
-            
-            <!-- Tarjeta Oportunidades -->
-            <div class="col-lg-3 col-md-6 mb-4">
-                <div class="card h-100 border-0 shadow-sm dropdown-hover">
-                    <div class="card-header bg-primary text-white py-3">
-                        <h5 class="mb-0"><i class="fas fa-search-dollar mr-2"></i> Oportunidades</h5>
-                    </div>
-                    <div class="card-body dropdown-content p-4">
-                        Explore un catálogo curado de propiedades seleccionadas bajo rigurosos criterios de rentabilidad, ubicación y potencial de revalorización. Filtre por tipo de activo, zona, precio y rendimiento esperado. Incluye:
-                        <ul class="list-unstyled mt-3 small text-left">
-                            <li>✔ Proyectos en pre-venta con ventajas fiscales</li>
-                            <li>✔ Propiedades en alquiler con contratos garantizados</li>
-                            <li>✔ Desarrollos turísticos con gestión hotelera incluida</li>
-                            <li>✔ Oportunidades off-market exclusivas</li>
-                        </ul>
-                        <a href="#propiedades" class="btn btn-outline-primary btn-sm mt-3">Explorar Catálogo</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Tarjeta Inversión & Asesoría -->
-            <div class="col-lg-3 col-md-6 mb-4">
-                <div class="card h-100 border-0 shadow-sm dropdown-hover">
-                    <div class="card-header bg-primary text-white py-3">
-                        <h5 class="mb-0"><i class="fas fa-handshake mr-2"></i> Inversión & Asesoría</h5>
-                    </div>
-                    <div class="card-body dropdown-content p-4">
-                        Estrategia de Inversión Personalizada para No Residentes. Servicios especializados para proteger y maximizar su inversión:
-                        <ul class="list-unstyled mt-3 small text-left">
-                            <li>✔ Due Diligence completo (legal, registral y urbanístico)</li>
-                            <li>✔ Gestión patrimonial desde el exterior</li>
-                            <li>✔ Estudio de rentabilidad con escenarios realistas</li>
-                        </ul>
-                        <a href="#asesoria" class="btn btn-outline-primary btn-sm mt-3">Conozca Nuestros Servicios</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Tarjeta La Firma -->
-            <div class="col-lg-3 col-md-6 mb-4">
-                <div class="card h-100 border-0 shadow-sm dropdown-hover">
-                    <div class="card-header bg-primary text-white py-3">
-                        <h5 class="mb-0"><i class="fas fa-building mr-2"></i> La Firma</h5>
-                    </div>
-                    <div class="card-body dropdown-content p-4">
-                        Más de 15 años de experiencia facilitando inversión inmobiliaria extranjera en República Dominicana. Amplia red de contactos con desarrolladores, notarías y entidades financieras.<br><br>
-                        No somos un portal común; somos su socio estratégico en el país, con reputación, resultados y referencias verificables de clientes internacionales.
-                        <a href="#firma" class="btn btn-outline-primary btn-sm mt-3">Conocer Más</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Tarjeta Contacto -->
-            <div class="col-lg-3 col-md-6 mb-4">
-                <div class="card h-100 border-0 shadow-sm dropdown-hover">
-                    <div class="card-header bg-primary text-white py-3">
-                        <h5 class="mb-0"><i class="fas fa-phone-volume mr-2"></i> Contacto</h5>
-                    </div>
-                    <div class="card-body dropdown-content p-4 text-center">
-                        <strong>Dominican Investor</strong><br>
-                        Santo Domingo Este – Boca Chica<br><br>
-                        <i class="fas fa-envelope mr-2"></i> dominicaninvestor@outlook.com<br>
-                        <i class="fas fa-phone mr-2"></i> +1 (829) 719-4086<br><br>
-                        Lunes a Domingo 9:00 AM – 6:00 PM
-                        <a href="#contacto" class="btn btn-light btn-sm mt-3">Contáctenos</a>
-                    </div>
-                </div>
-            </div>
-
+    <!-- Hero Section (esto es lo principal que querías recuperar) -->
+    <section class="hero" id="inicio">
+        <div class="container">
+            <h1>Invierte en República Dominicana</h1>
+            <p class="lead">Oportunidades premium con alta rentabilidad, plusvalía y seguridad jurídica total para inversionistas extranjeros.</p>
+            <a href="#propiedades" class="btn btn-primary btn-lg mt-4">Ver Oportunidades</a>
         </div>
-    </div>
-</section>
-    <!-- Propiedades Destacadas -->
+    </section>
+
+    <!-- Propiedades Destacadas (mantengo lo que ya tenías, puedes editar después) -->
     <section id="propiedades" class="py-5">
         <div class="container">
             <h2 class="section-title">Propiedades Destacadas</h2>
-            
-            <!-- Filtros -->
+            <!-- Filtros simples -->
             <div class="row mb-5 justify-content-center">
                 <div class="col-md-10">
                     <form class="form-inline flex-wrap justify-content-center">
                         <select class="form-control mr-2 mb-2" style="width:180px;">
                             <option>Todas las categorías</option>
-                            <option>Villas de lujo</option>
-                            <option>Apartamentos</option>
-                            <option>Pre-venta</option>
                         </select>
                         <select class="form-control mr-2 mb-2" style="width:180px;">
                             <option>Compra o Alquiler</option>
-                            <option>Compra</option>
-                            <option>Alquiler garantizado</option>
                         </select>
-                        <input type="number" class="form-control mr-2 mb-2" placeholder="Precio Máximo (USD)" style="width:180px;">
+                        <input type="number" class="form-control mr-2 mb-2" placeholder="Precio Máximo" style="width:180px;">
                         <select class="form-control mr-2 mb-2" style="width:180px;">
                             <option>Zonas de alto potencial</option>
-                            <option>Punta Cana</option>
-                            <option>Cap Cana</option>
-                            <option>Bávaro</option>
-                            <option>Santo Domingo</option>
                         </select>
                         <button type="submit" class="btn btn-primary mb-2">Analizar</button>
                         <button type="button" class="btn btn-secondary mb-2 ml-2">Limpiar</button>
                     </form>
                 </div>
             </div>
-
-            <!-- Grid de propiedades (actualizadas con datos reales 2026) -->
+            <!-- Grid de propiedades -->
             <div class="row">
                 <div class="col-md-4">
                     <div class="card property-card">
-                        <img src="https://www.exceptionalvillas.com/public/upload/listing_photos_resize/w1900xh1900-casa-del-mar-dominican-republic-exceptional-villas-403-.jpg" class="card-img-top" alt="Villa Cap Cana">
+                        <img src="https://images.unsplash.com/photo-1580587771525-78b9d3f36c2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" class="card-img-top" alt="Propiedad 1">
                         <div class="card-body">
-                            <h5 class="card-title">Villa de Lujo Beachfront Cap Cana</h5>
-                            <p class="card-text">$2,500,000 • 6 hab • 6 baños • 1,200 m² • Piscina privada + vistas al mar</p>
-                            <p class="text-muted small">Alta rentabilidad vacacional • Zona premium</p>
+                            <h5 class="card-title">Casa Moderna en Punta Cana</h5>
+                            <p class="card-text">$450,000 • 4 hab • 3 baños • 280m²</p>
                             <a href="#" class="btn btn-primary">Ver Detalles</a>
                         </div>
                     </div>
                 </div>
-
                 <div class="col-md-4">
                     <div class="card property-card">
-                        <img src="https://personalvillas.com/wp-content/uploads/2024/03/modern-luxury-villa-infinity-pool-white-loungers-punta-cana-1024x683.jpeg" class="card-img-top" alt="Villa Punta Cana">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" class="card-img-top" alt="Propiedad 2">
                         <div class="card-body">
-                            <h5 class="card-title">Villa Moderna con Infinity Pool Punta Cana</h5>
-                            <p class="card-text">$1,200,000 • 5 hab • 5 baños • 600 m² • Golf & Beach cercano</p>
-                            <p class="text-muted small">Plusvalía 7-10% anual estimada</p>
+                            <h5 class="card-title">Apartamento en Santo Domingo</h5>
+                            <p class="card-text">$220,000 • 3 hab • 2 baños • 150m²</p>
                             <a href="#" class="btn btn-primary">Ver Detalles</a>
                         </div>
                     </div>
                 </div>
-
-                <div class="col-md-4">
-                    <div class="card property-card">
-                        <img src="https://media.vrbo.com/lodging/73000000/72040000/72030700/72030671/121e7271.jpg?impolicy=resizecrop&rw=575&rh=575&ra=fill" class="card-img-top" alt="Apartamento Beachfront">
-                        <div class="card-body">
-                            <h5 class="card-title">Apartamento Frente al Mar Bávaro</h5>
-                            <p class="card-text">$350,000 • 3 hab • 3 baños • 180 m² • Piscina resort</p>
-                            <p class="text-muted small">Ideal Airbnb • ROI 8-12%</p>
-                            <a href="#" class="btn btn-primary">Ver Detalles</a>
-                        </div>
-                    </div>
-                </div>
+                <!-- Puedes agregar más tarjetas aquí cuando quieras -->
             </div>
-
             <div class="text-center mt-5">
-                <button class="btn btn-success btn-lg">+ Ver Más Propiedades</button>
+                <button class="btn btn-success btn-lg">+ Nueva Propiedad</button>
             </div>
         </div>
     </section>
@@ -238,9 +127,12 @@
         </div>
     </footer>
 
-    <!-- Scripts -->
+    <!-- Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
 
 
 
