@@ -53,112 +53,124 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <!-- Acordeón de Inicio - Info desplegable al clic -->
-<section class="py-5 bg-light">
-    <div class="container">
-        <h2 class="section-title mb-5">¿Por qué invertir con Dominican Investor?</h2>
-        
-        <div class="accordion" id="inicioAccordion">
-            
-            <!-- 1. Oportunidades -->
-            <div class="card mb-3 border-0 shadow-sm">
-                <div class="card-header bg-primary text-white" id="headingOportunidades">
-                    <h2 class="mb-0">
-                        <button class="btn btn-link btn-block text-left text-white" type="button" 
-                                data-toggle="collapse" data-target="#collapseOportunidades" 
-                                aria-expanded="true" aria-controls="collapseOportunidades">
-                            <i class="fas fa-search-dollar mr-3"></i> Oportunidades
-                        </button>
-                    </h2>
-                </div>
-                <div id="collapseOportunidades" class="collapse show" 
-                     aria-labelledby="headingOportunidades" data-parent="#inicioAccordion">
-                    <div class="card-body">
-                        Explore un catálogo curado de propiedades seleccionadas bajo rigurosos criterios de rentabilidad, ubicación y potencial de revalorización. Filtre por tipo de activo, zona, precio y rendimiento esperado. Incluye:
-                        <ul class="mt-3">
-                            <li>✔ Proyectos en pre-venta con ventajas fiscales</li>
-                            <li>✔ Propiedades en alquiler con contratos garantizados</li>
-                            <li>✔ Desarrollos turísticos con gestión hotelera incluida</li>
-                            <li>✔ Oportunidades off-market exclusivas para inversores registrados</li>
-                        </ul>
-                        <a href="#propiedades" class="btn btn-outline-primary btn-sm mt-3">Explorar Catálogo</a>
-                    </div>
-                </div>
+    <!-- Hero Section - Limpia y elegante, sin botones feos en medio -->
+<section class="hero-section position-relative text-center text-white" id="inicio">
+    <div class="hero-overlay"></div>
+    <div class="container position-relative z-1 py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <h1 class="display-3 fw-bold mb-4">Invierte en República Dominicana</h1>
+                <p class="lead fs-4 mb-5">
+                    Oportunidades premium con alta rentabilidad, plusvalía y 
+                    seguridad jurídica total para inversionistas extranjeros.
+                </p>
+                <a href="#oportunidades" class="btn btn-primary btn-lg px-5 py-3 rounded-pill shadow">
+                    Ver Oportunidades
+                </a>
             </div>
-
-            <!-- 2. Inversión & Asesoría -->
-            <div class="card mb-3 border-0 shadow-sm">
-                <div class="card-header bg-primary text-white" id="headingInversion">
-                    <h2 class="mb-0">
-                        <button class="btn btn-link btn-block text-left text-white collapsed" type="button" 
-                                data-toggle="collapse" data-target="#collapseInversion" 
-                                aria-expanded="false" aria-controls="collapseInversion">
-                            <i class="fas fa-handshake mr-3"></i> Inversión & Asesoría
-                        </button>
-                    </h2>
-                </div>
-                <div id="collapseInversion" class="collapse" 
-                     aria-labelledby="headingInversion" data-parent="#inicioAccordion">
-                    <div class="card-body">
-                        Estrategia de Inversión Personalizada para No Residentes. Servicios especializados para proteger y maximizar su inversión:
-                        <ul class="mt-3">
-                            <li>✔ Due Diligence completo: Validación legal, registral y urbanística</li>
-                            <li>✔ Gestión patrimonial: Administración integral desde el exterior</li>
-                            <li>✔ Estudio de rentabilidad: Proyecciones realistas con escenarios optimistas/conservadores</li>
-                        </ul>
-                        <a href="#asesoria" class="btn btn-outline-primary btn-sm mt-3">Conozca Nuestros Servicios</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 3. La Firma -->
-            <div class="card mb-3 border-0 shadow-sm">
-                <div class="card-header bg-primary text-white" id="headingFirma">
-                    <h2 class="mb-0">
-                        <button class="btn btn-link btn-block text-left text-white collapsed" type="button" 
-                                data-toggle="collapse" data-target="#collapseFirma" 
-                                aria-expanded="false" aria-controls="collapseFirma">
-                            <i class="fas fa-building mr-3"></i> La Firma
-                        </button>
-                    </h2>
-                </div>
-                <div id="collapseFirma" class="collapse" 
-                     aria-labelledby="headingFirma" data-parent="#inicioAccordion">
-                    <div class="card-body">
-                        Más de 15 años de experiencia facilitando inversión inmobiliaria extranjera en República Dominicana, con una amplia red de contactos con desarrolladores, notarías y entidades financieras.<br><br>
-                        No somos un portal inmobiliario común; somos su socio estratégico en el país, con reputación, resultados y referencias verificables de clientes internacionales.
-                        <a href="#firma" class="btn btn-outline-primary btn-sm mt-3 d-block">Conocer Más</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 4. Contacto (queda abierto o cerrado según prefieras; aquí lo dejo cerrado) -->
-            <div class="card border-0 shadow-sm">
-                <div class="card-header bg-primary text-white" id="headingContacto">
-                    <h2 class="mb-0">
-                        <button class="btn btn-link btn-block text-left text-white collapsed" type="button" 
-                                data-toggle="collapse" data-target="#collapseContacto" 
-                                aria-expanded="false" aria-controls="collapseContacto">
-                            <i class="fas fa-phone-volume mr-3"></i> Contacto
-                        </button>
-                    </h2>
-                </div>
-                <div id="collapseContacto" class="collapse" 
-                     aria-labelledby="headingContacto" data-parent="#inicioAccordion">
-                    <div class="card-body text-center">
-                        <strong>Dominican Investor</strong><br>
-                        Santo Domingo Este – Boca Chica<br><br>
-                        <i class="fas fa-envelope mr-2"></i> dominicaninvestor@outlook.com<br>
-                        <i class="fas fa-phone mr-2"></i> +1 (829) 719-4086<br><br>
-                        Lunes a Domingo<br>9:00 AM – 6:00 PM
-                        <a href="#contacto" class="btn btn-light btn-sm mt-3">Contáctenos Ahora</a>
-                    </div>
-                </div>
-            </div>
-
         </div>
     </div>
+</section>
+
+<!-- Sección "¿Por qué nosotros?" - Tarjetas elegantes debajo de la hero -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <h2 class="text-center display-5 fw-bold mb-5 text-dark">
+            ¿Por qué invertir con Dominican Investor?
+        </h2>
+        
+        <div class="row g-4">
+            <!-- Tarjeta 1 -->
+            <div class="col-lg-3 col-md-6">
+                <div class="card h-100 border-0 shadow-sm text-center p-4 transition-hover">
+                    <div class="mb-4">
+                        <i class="fas fa-search-dollar fa-4x text-primary"></i>
+                    </div>
+                    <h4 class="fw-bold mb-3">Oportunidades Exclusivas</h4>
+                    <p class="text-muted">
+                        Catálogo curado: pre-ventas con beneficios fiscales, alquileres garantizados, desarrollos turísticos y off-market.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Tarjeta 2 -->
+            <div class="col-lg-3 col-md-6">
+                <div class="card h-100 border-0 shadow-sm text-center p-4 transition-hover">
+                    <div class="mb-4">
+                        <i class="fas fa-handshake fa-4x text-primary"></i>
+                    </div>
+                    <h4 class="fw-bold mb-3">Asesoría Personalizada</h4>
+                    <p class="text-muted">
+                        Due diligence completo, gestión patrimonial desde el exterior y proyecciones realistas de rentabilidad.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Tarjeta 3 -->
+            <div class="col-lg-3 col-md-6">
+                <div class="card h-100 border-0 shadow-sm text-center p-4 transition-hover">
+                    <div class="mb-4">
+                        <i class="fas fa-building fa-4x text-primary"></i>
+                    </div>
+                    <h4 class="fw-bold mb-3">La Firma</h4>
+                    <p class="text-muted">
+                        +15 años de experiencia con inversionistas internacionales. Socio estratégico, no un portal común.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Tarjeta 4 -->
+            <div class="col-lg-3 col-md-6">
+                <div class="card h-100 border-0 shadow-sm text-center p-4 transition-hover">
+                    <div class="mb-4">
+                        <i class="fas fa-phone-volume fa-4x text-primary"></i>
+                    </div>
+                    <h4 class="fw-bold mb-3">Contacto Directo</h4>
+                    <p class="text-muted">
+                        Santo Domingo Este – Boca Chica<br>
+                        +1 (829) 719-4086<br>
+                        dominicaninvestor@outlook.com
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mt-5">
+            <a href="#contacto" class="btn btn-outline-primary btn-lg px-5">
+                Contáctenos Ahora
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- CSS adicional recomendado (agrega en <style> o archivo externo) -->
+<style>
+    .hero-section {
+        background: url('TU-FOTO-AQUI.jpg') no-repeat center center;
+        background-size: cover;
+        min-height: 80vh;
+        position: relative;
+    }
+    .hero-overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.45); /* Oscurece un poco para mejor legibilidad */
+    }
+    .transition-hover {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .transition-hover:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 15px 30px rgba(0,0,0,0.15) !important;
+    }
+    .btn-primary {
+        background-color: #0d6efd;
+        border: none;
+    }
+    .btn-primary:hover {
+        background-color: #0b5ed7;
+    }
+</style>
 </section>
     <!-- Secciones de Inicio - Resumen rápido -->
 <section class="py-5 bg-light">
@@ -308,6 +320,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
+
 
 
 
