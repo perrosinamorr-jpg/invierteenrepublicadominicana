@@ -777,17 +777,15 @@ h1 {
     </style>
 </head>
 <body>
-    <!-- ===== HEADER ===== -->
-    <header>
-        <div class="container">
-            <div class="header-container">
-               <a href="#" class="logo">
-    <span class="flag">🇩🇴</span>
-    <i class="fas fa-home"></i>
-    Plataforma de inversión inmobiliaria premium <span class="country">en República Dominicana</span>
-</a>
-        <style>
-/* === LOGO EJECUTIVO === */
+    /* === HEADER EJECUTIVO === */
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+/* LOGO */
 .logo {
     display: flex;
     align-items: center;
@@ -799,7 +797,7 @@ h1 {
 }
 
 .logo .flag {
-    font-size: 18px;
+    font-size: 20px; /* ajusta para que se vea completa la bandera */
     line-height: 1;
 }
 
@@ -807,67 +805,84 @@ h1 {
     color: #1b5cff;
 }
 
+.logo .logo-text {
+    display: flex;
+    flex-direction: column;
+}
+
 .logo .country {
     font-weight: 500;
     color: #6b7280;
+    font-size: 13px;
 }
-</style>
-  <ul class="menu">
-    <li><a href="#inicio">Inicio</a></li>
 
-    <li class="dropdown">
-      <a href="#">Inversión ▾</a>
-      <ul class="dropdown-content">
-        <li><a href="#inversion">Oportunidades</a></li>
-        <li><a href="#asesoria">Asesoría</a></li>
-      </ul>
-    </li>
+/* MENÚ */
+#mainNav {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+}
 
-    <li class="dropdown">
-      <a href="#">La Firma ▾</a>
-      <ul class="dropdown-content">
-        <li><a href="#firma">Quiénes somos</a></li>
-      </ul>
-    </li>
+#mainNav li {
+    list-style: none;
+    position: relative;
+}
 
-    <li><a href="#contacto">Contacto</a></li>
-  </ul>
-</nav>
-                        <li class="dropdown">
-    <a href="#servicios">Inversión & Asesoría</a>
-    <div class="dropdown-content">
-        <h4 style="margin-top: 0; color: var(--primary, #0056b3);">Asesoría Integral</h4>
-        <p>Acompañamos a inversionistas extranjeros en todo el proceso de inversión inmobiliaria en República Dominicana, desde la identificación de oportunidades hasta la toma de decisiones informadas, con un enfoque claro en retorno, riesgo y protección del capital.</p>
-        <a href="#servicios" class="btn-dropdown">Más sobre nuestra asesoría →</a>
-    </div>
-</li>
-                        <li class="dropdown">
-    <a href="#nosotros">La Firma</a>
-    <div class="dropdown-content">
-        <h4 style="margin-top: 0; color: var(--primary, #0056b3);">Dominican Investor</h4>
-        <p>es una plataforma enfocada en conectar inversionistas extranjeros con oportunidades inmobiliarias estratégicas en República Dominicana.</p>
-        <p>Nuestro enfoque combina análisis de mercado, criterio financiero y conocimiento local para identificar proyectos con alto potencial de rentabilidad y crecimiento sostenible.</p>
-        <a href="#nosotros" class="btn-dropdown">Conocer más sobre nosotros →</a>
-    </div>
-</li>
-                        <li class="dropdown">
-    <a href="#contacto">Hablemos de tu inversión</a>
-    <div class="dropdown-content">
-        <h4 style="margin-top: 0; color: var(--primary, #0056b3);">¿Listo para invertir?</h4>
-        <p>Si estás evaluando invertir en bienes raíces en República Dominicana, nuestro equipo puede ayudarte a analizar oportunidades alineadas con tus objetivos de rentabilidad, plazo y perfil de riesgo.</p>
-        <a href="#contacto" class="btn-dropdown">Contáctanos ahora →</a>
-    </div>
-</li>
+#mainNav a {
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    color: #0a2540;
+    padding: 8px 10px;
+    transition: color 0.3s ease;
+}
+
+#mainNav a:hover {
+    color: #1b5cff;
+}
+
+/* DROPDOWN */
+.dropdown-menu {
+    position: absolute;
+    top: 120%;
+    left: 0;
+    background: #ffffff;
+    min-width: 200px;
+    padding: 12px 0;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    z-index: 999;
+}
+
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 10px 20px;
+    font-size: 14px;
+    color: #0a2540;
+}
+
+.dropdown-menu a:hover {
+    background: #f2f6ff;
+}
+                        <li><a href="#asesoria">Asesoría</a></li>
+                        <li><a href="#firma">Firma</a></li>
                     </ul>
-                </nav>
-                
-                <button class="mobile-menu-btn" id="mobileMenuBtn">
-                    <i class="fas fa-bars"></i>
-                </button>
-            </div>
-        </div>
-    </header>
-
+                </li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
     <!-- ===== HERO ===== -->
     <section class="hero" id="inicio">
         <div class="container">
@@ -1590,6 +1605,7 @@ para inversionistas extranjeros.</p>
 </body>
 
 </html>
+
 
 
 
