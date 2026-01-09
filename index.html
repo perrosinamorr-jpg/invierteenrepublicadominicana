@@ -30,6 +30,18 @@
         .accordion .card-header { background: #0a2540; }
         .accordion-button { color: white !important; font-weight: bold; }
         footer { background: #0a2540; color: white; padding: 40px 0; text-align: center; margin-top: 60px; }
+        .dropdown-hover {
+    position: relative;
+    overflow: hidden;
+}
+.dropdown-hover .dropdown-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+}
+.dropdown-hover:hover .dropdown-content {
+    max-height: 600px; /* Ajusta si necesitas más espacio */
+}
     </style>
 </head>
 <body>
@@ -62,120 +74,84 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero" id="inicio">
-        <div class="container">
-            <h1>Invierte en República Dominicana</h1>
-            <p class="lead">Oportunidades premium con alta rentabilidad, plusvalía y seguridad jurídica total para inversionistas extranjeros.</p>
-            <a href="#propiedades" class="btn btn-primary btn-lg mt-4">Ver Oportunidades</a>
-        </div>
-    </section>
-
-    <!-- Acordeón de Información Principal (desplegable al clic) -->
-    <section class="py-5 bg-light">
-        <div class="container">
-            <h2 class="section-title mb-5">¿Por qué invertir con Dominican Investor?</h2>
+  <!-- Menú de Inicio - Desplegable al hover (estilo tarjetas) -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <h2 class="section-title mb-5 text-center">Explora Dominican Investor</h2>
+        
+        <div class="row text-center">
             
-            <div class="accordion" id="inicioAccordion">
-                
-                <!-- Oportunidades -->
-                <div class="card mb-3 border-0 shadow-sm">
-                    <div class="card-header" id="headingOportunidades">
-                        <h2 class="mb-0">
-                            <button class="btn btn-link btn-block text-left accordion-button" type="button" 
-                                    data-toggle="collapse" data-target="#collapseOportunidades" 
-                                    aria-expanded="true" aria-controls="collapseOportunidades">
-                                <i class="fas fa-search-dollar mr-3"></i> Oportunidades
-                            </button>
-                        </h2>
+            <!-- Tarjeta Oportunidades -->
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="card h-100 border-0 shadow-sm dropdown-hover">
+                    <div class="card-header bg-primary text-white py-3">
+                        <h5 class="mb-0"><i class="fas fa-search-dollar mr-2"></i> Oportunidades</h5>
                     </div>
-                    <div id="collapseOportunidades" class="collapse show" 
-                         aria-labelledby="headingOportunidades" data-parent="#inicioAccordion">
-                        <div class="card-body">
-                            Explore un catálogo curado de propiedades seleccionadas bajo rigurosos criterios de rentabilidad, ubicación y potencial de revalorización. Filtre por tipo de activo, zona, precio y rendimiento esperado. Incluye:
-                            <ul class="mt-3">
-                                <li>Proyectos en pre-venta con ventajas fiscales (CONFOTUR)</li>
-                                <li>Propiedades en alquiler con contratos garantizados</li>
-                                <li>Desarrollos turísticos con gestión hotelera incluida</li>
-                                <li>Oportunidades off-market exclusivas para inversores registrados</li>
-                            </ul>
-                            <a href="#propiedades" class="btn btn-outline-primary mt-3">Explorar Catálogo</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Inversión & Asesoría -->
-                <div class="card mb-3 border-0 shadow-sm">
-                    <div class="card-header" id="headingInversion">
-                        <h2 class="mb-0">
-                            <button class="btn btn-link btn-block text-left accordion-button collapsed" type="button" 
-                                    data-toggle="collapse" data-target="#collapseInversion" 
-                                    aria-expanded="false" aria-controls="collapseInversion">
-                                <i class="fas fa-handshake mr-3"></i> Inversión & Asesoría
-                            </button>
-                        </h2>
-                    </div>
-                    <div id="collapseInversion" class="collapse" 
-                         aria-labelledby="headingInversion" data-parent="#inicioAccordion">
-                        <div class="card-body">
-                            Estrategia de Inversión Personalizada para No Residentes. Servicios especializados para proteger y maximizar su inversión:
-                            <ul class="mt-3">
-                                <li>Due Diligence completo: Validación legal, registral y urbanística</li>
-                                <li>Gestión patrimonial: Administración integral desde el exterior</li>
-                                <li>Estudio de rentabilidad: Proyecciones realistas con escenarios optimistas/conservadores</li>
-                            </ul>
-                            <a href="#asesoria" class="btn btn-outline-primary mt-3">Conozca Nuestros Servicios</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- La Firma -->
-                <div class="card mb-3 border-0 shadow-sm">
-                    <div class="card-header" id="headingFirma">
-                        <h2 class="mb-0">
-                            <button class="btn btn-link btn-block text-left accordion-button collapsed" type="button" 
-                                    data-toggle="collapse" data-target="#collapseFirma" 
-                                    aria-expanded="false" aria-controls="collapseFirma">
-                                <i class="fas fa-building mr-3"></i> La Firma
-                            </button>
-                        </h2>
-                    </div>
-                    <div id="collapseFirma" class="collapse" 
-                         aria-labelledby="headingFirma" data-parent="#inicioAccordion">
-                        <div class="card-body">
-                            Más de 15 años de experiencia facilitando inversión inmobiliaria extranjera en República Dominicana, con una amplia red de contactos con desarrolladores, notarías y entidades financieras.<br><br>
-                            No somos un portal inmobiliario común; somos su socio estratégico en el país, con reputación, resultados y referencias verificables de clientes internacionales.
-                            <a href="#firma" class="btn btn-outline-primary mt-3 d-block">Conocer Más</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Contacto -->
-                <div class="card border-0 shadow-sm">
-                    <div class="card-header" id="headingContacto">
-                        <h2 class="mb-0">
-                            <button class="btn btn-link btn-block text-left accordion-button collapsed" type="button" 
-                                    data-toggle="collapse" data-target="#collapseContacto" 
-                                    aria-expanded="false" aria-controls="collapseContacto">
-                                <i class="fas fa-phone-volume mr-3"></i> Contacto
-                            </button>
-                        </h2>
-                    </div>
-                    <div id="collapseContacto" class="collapse" 
-                         aria-labelledby="headingContacto" data-parent="#inicioAccordion">
-                        <div class="card-body text-center">
-                            <strong>Dominican Investor</strong><br>
-                            Santo Domingo Este – Boca Chica<br><br>
-                            <i class="fas fa-envelope mr-2"></i> dominicaninvestor@outlook.com<br>
-                            <i class="fas fa-phone mr-2"></i> +1 (829) 719-4086<br><br>
-                            Lunes a Domingo<br>9:00 AM – 6:00 PM
-                            <a href="#contacto" class="btn btn-primary mt-3">Contáctenos Ahora</a>
-                        </div>
+                    <div class="card-body dropdown-content p-4">
+                        Explore un catálogo curado de propiedades seleccionadas bajo rigurosos criterios de rentabilidad, ubicación y potencial de revalorización. Filtre por tipo de activo, zona, precio y rendimiento esperado. Incluye:
+                        <ul class="list-unstyled mt-3 small text-left">
+                            <li>✔ Proyectos en pre-venta con ventajas fiscales</li>
+                            <li>✔ Propiedades en alquiler con contratos garantizados</li>
+                            <li>✔ Desarrollos turísticos con gestión hotelera incluida</li>
+                            <li>✔ Oportunidades off-market exclusivas</li>
+                        </ul>
+                        <a href="#propiedades" class="btn btn-outline-primary btn-sm mt-3">Explorar Catálogo</a>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
 
+            <!-- Tarjeta Inversión & Asesoría -->
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="card h-100 border-0 shadow-sm dropdown-hover">
+                    <div class="card-header bg-primary text-white py-3">
+                        <h5 class="mb-0"><i class="fas fa-handshake mr-2"></i> Inversión & Asesoría</h5>
+                    </div>
+                    <div class="card-body dropdown-content p-4">
+                        Estrategia de Inversión Personalizada para No Residentes. Servicios especializados para proteger y maximizar su inversión:
+                        <ul class="list-unstyled mt-3 small text-left">
+                            <li>✔ Due Diligence completo (legal, registral y urbanístico)</li>
+                            <li>✔ Gestión patrimonial desde el exterior</li>
+                            <li>✔ Estudio de rentabilidad con escenarios realistas</li>
+                        </ul>
+                        <a href="#asesoria" class="btn btn-outline-primary btn-sm mt-3">Conozca Nuestros Servicios</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tarjeta La Firma -->
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="card h-100 border-0 shadow-sm dropdown-hover">
+                    <div class="card-header bg-primary text-white py-3">
+                        <h5 class="mb-0"><i class="fas fa-building mr-2"></i> La Firma</h5>
+                    </div>
+                    <div class="card-body dropdown-content p-4">
+                        Más de 15 años de experiencia facilitando inversión inmobiliaria extranjera en República Dominicana. Amplia red de contactos con desarrolladores, notarías y entidades financieras.<br><br>
+                        No somos un portal común; somos su socio estratégico en el país, con reputación, resultados y referencias verificables de clientes internacionales.
+                        <a href="#firma" class="btn btn-outline-primary btn-sm mt-3">Conocer Más</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tarjeta Contacto -->
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="card h-100 border-0 shadow-sm dropdown-hover">
+                    <div class="card-header bg-primary text-white py-3">
+                        <h5 class="mb-0"><i class="fas fa-phone-volume mr-2"></i> Contacto</h5>
+                    </div>
+                    <div class="card-body dropdown-content p-4 text-center">
+                        <strong>Dominican Investor</strong><br>
+                        Santo Domingo Este – Boca Chica<br><br>
+                        <i class="fas fa-envelope mr-2"></i> dominicaninvestor@outlook.com<br>
+                        <i class="fas fa-phone mr-2"></i> +1 (829) 719-4086<br><br>
+                        Lunes a Domingo 9:00 AM – 6:00 PM
+                        <a href="#contacto" class="btn btn-light btn-sm mt-3">Contáctenos</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
     <!-- Propiedades Destacadas -->
     <section id="propiedades" class="py-5">
         <div class="container">
@@ -265,6 +241,7 @@
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js
+
 
 
 
