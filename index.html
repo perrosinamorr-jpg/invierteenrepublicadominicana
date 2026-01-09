@@ -781,14 +781,35 @@ h1 {
     <header>
         <div class="container">
             <div class="header-container">
-                <a href="#" class="logo">
-                    <i class="fas fa-home"></i>
-                    Plataforma de inversión inmobiliaria premium <span style="color: var(--secondary);">en Republica Dominicana</span>
-                </a>
-                
-                <nav>
-                    <ul id="mainNav">
-                        <nav>
+               <a href="#" class="logo">
+    <span class="flag">🇩🇴</span>
+    <i class="fas fa-home"></i>
+    Plataforma de inversión inmobiliaria premium <span class="country">en República Dominicana</span>
+</a>
+                /* === LOGO EJECUTIVO === */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    color: #0a2540;
+}
+
+.logo .flag {
+    font-size: 18px;
+    line-height: 1;
+}
+
+.logo i {
+    color: #1b5cff;
+}
+
+.logo .country {
+    font-weight: 500;
+    color: #6b7280;
+}
   <ul class="menu">
     <li><a href="#inicio">Inicio</a></li>
 
@@ -1567,6 +1588,7 @@ para inversionistas extranjeros.</p>
 </body>
 
 </html>
+
 
 
 
