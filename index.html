@@ -176,128 +176,204 @@ h1 {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* === HEADER EJECUTIVO === */
+        <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dominican Investor</title>
+    
+    <!-- Font Awesome para íconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Fuentes profesionales de Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #0a2540;     /* Azul ejecutivo */
+            --accent: #1b5cff;      /* Azul hover */
+            --text-light: #6b7280;
+            --bg-light: #f8fbff;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: white;
+            padding: 24px 0;
+            border-bottom: 1px solid #eef2f6;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        
         .header-container {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            width: 100%;
         }
-
-        /* LOGO */
+        
+        /* LOGO REFINADO */
         .logo {
             display: flex;
             align-items: center;
-            gap: 8px;
-            font-size: 14px;
-            font-weight: 500;
+            gap: 16px;
             text-decoration: none;
-            color: #0a2540;
+            color: var(--primary);
         }
-
-        .logo .flag {
-            font-size: 20px;
-            line-height: 1;
+        
+        .logo-icon {
+            font-size: 40px;
+            color: var(--accent);
         }
-
-        .logo i {
-            color: #1b5cff;
+        
+        .logo-text h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 700;
+            margin: 0;
+            color: var(--primary);
         }
-
-        .logo .logo-text {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .logo .country {
+        
+        .logo-text .slogan {
+            font-size: 14px;
+            color: var(--text-light);
             font-weight: 500;
-            color: #6b7280;
-            font-size: 13px;
+            margin-top: 4px;
         }
-
-        /* MENÚ */
+        
+        /* MENÚ PROFESIONAL */
         #mainNav {
             display: flex;
-            gap: 24px;
-            align-items: center;
-        }
-
-        #mainNav li {
+            gap: 36px;
             list-style: none;
-            position: relative;
         }
-
+        
         #mainNav a {
             text-decoration: none;
-            font-size: 14px;
-            font-weight: 500;
-            color: #0a2540;
-            padding: 8px 10px;
-            transition: color 0.3s ease;
+            font-weight: 600;
+            font-size: 15px;
+            color: var(--primary);
+            padding: 8px 0;
+            position: relative;
+            transition: color 0.3s;
         }
-
+        
         #mainNav a:hover {
-            color: #1b5cff;
+            color: var(--accent);
         }
-
-        /* DROPDOWN */
+        
+        #mainNav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            bottom: -8px;
+            left: 0;
+            background: var(--accent);
+            transition: width 0.3s;
+        }
+        
+        #mainNav a:hover::after,
+        #mainNav a.active::after {
+            width: 100%;
+        }
+        
+        #mainNav a.active {
+            color: var(--accent);
+        }
+        
+        /* DROPDOWN MEJORADO */
+        .dropdown {
+            position: relative;
+        }
+        
         .dropdown-menu {
             position: absolute;
             top: 120%;
-            left: 0;
-            background: #ffffff;
-            min-width: 200px;
-            padding: 12px 0;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+            left: 50%;
+            transform: translateX(-50%);
+            background: white;
+            min-width: 220px;
+            padding: 16px 0;
+            border-radius: 12px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.12);
             opacity: 0;
             visibility: hidden;
-            transform: translateY(10px);
             transition: all 0.3s ease;
-            z-index: 999;
+            border: 1px solid #f0f2f5;
         }
-
+        
         .dropdown:hover .dropdown-menu {
             opacity: 1;
             visibility: visible;
-            transform: translateY(0);
+            top: 100%;
         }
-
+        
         .dropdown-menu a {
             display: block;
-            padding: 10px 20px;
-            font-size: 14px;
-            color: #0a2540;
+            padding: 12px 24px;
+            color: var(--primary);
+            font-size: 14.5px;
+            transition: all 0.2s;
         }
-
+        
         .dropdown-menu a:hover {
-            background: #f2f6ff;
+            background: var(--bg-light);
+            color: var(--accent);
+            padding-left: 30px;
+        }
+        
+        /* Móvil básico */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 20px;
+            }
+            #mainNav {
+                gap: 20px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
         }
     </style>
 </head>
-
 <body>
     <header>
         <div class="container header-container">
-            <!-- LOGO -->
-            <a href="#" class="logo">
-                <span class="flag">🇩🇴</span>
-                <i class="fas fa-home"></i>
-                <span class="logo-text">
-                    Plataforma de inversión inmobiliaria premium
-                    <span class="country">en República Dominicana</span>
-                </span>
+            <!-- LOGO PROFESIONAL -->
+            <a href="#inicio" class="logo">
+                <i class="fas fa-home logo-icon"></i>
+                <div class="logo-text">
+                    <h1>Dominican Investor</h1>
+                    <div class="slogan">Plataforma de inversión inmobiliaria premium en República Dominicana</div>
+                </div>
             </a>
-
+            
             <!-- MENÚ -->
             <nav>
                 <ul id="mainNav">
                     <li><a href="#inicio" class="active">Inicio</a></li>
                     <li><a href="#propiedades">Oportunidades</a></li>
                     <li class="dropdown">
-                        <a href="#inversion">Inversión</a>
+                        <a href="#">Inversión ▾</a>
                         <ul class="dropdown-menu">
+                            <li><a href="#propiedades">Oportunidades</a></li>
                             <li><a href="#asesoria">Asesoría</a></li>
-                            <li><a href="#firma">Firma</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#">La Firma ▾</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#nosotros">Quiénes Somos</a></li>
                         </ul>
                     </li>
                     <li><a href="#contacto">Contacto</a></li>
@@ -305,7 +381,10 @@ h1 {
             </nav>
         </div>
     </header>
+    
+    <!-- El resto de tu página va aquí -->
 </body>
+</html>
     <!-- ===== HERO ===== -->
     <section class="hero" id="inicio">
         <div class="container">
@@ -1028,6 +1107,7 @@ para inversionistas extranjeros.</p>
 </body>
 
 </html>
+
 
 
 
