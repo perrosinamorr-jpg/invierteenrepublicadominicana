@@ -179,207 +179,156 @@ h1 {
         <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dominican Investor</title>
-    
-    <!-- Font Awesome para íconos -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Fuentes profesionales de Google -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-    
-    <style>
-        :root {
-            --primary: #0a2540;     /* Azul ejecutivo */
-            --accent: #1b5cff;      /* Azul hover */
-            --text-light: #6b7280;
-            --bg-light: #f8fbff;
-        }
-        
-        body {
-            font-family: 'Inter', sans-serif;
-            margin: 0;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        header {
-            background: white;
-            padding: 24px 0;
-            border-bottom: 1px solid #eef2f6;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-        }
-        
-        .header-container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-        
-        /* LOGO REFINADO */
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            text-decoration: none;
-            color: var(--primary);
-        }
-        
-        .logo-icon {
-            font-size: 40px;
-            color: var(--accent);
-        }
-        
-        .logo-text h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 28px;
-            font-weight: 700;
-            margin: 0;
-            color: var(--primary);
-        }
-        
-        .logo-text .slogan {
-            font-size: 14px;
-            color: var(--text-light);
-            font-weight: 500;
-            margin-top: 4px;
-        }
-        
-        /* MENÚ PROFESIONAL */
-        #mainNav {
-            display: flex;
-            gap: 36px;
-            list-style: none;
-        }
-        
-        #mainNav a {
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 15px;
-            color: var(--primary);
-            padding: 8px 0;
-            position: relative;
-            transition: color 0.3s;
-        }
-        
-        #mainNav a:hover {
-            color: var(--accent);
-        }
-        
-        #mainNav a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 3px;
-            bottom: -8px;
-            left: 0;
-            background: var(--accent);
-            transition: width 0.3s;
-        }
-        
-        #mainNav a:hover::after,
-        #mainNav a.active::after {
-            width: 100%;
-        }
-        
-        #mainNav a.active {
-            color: var(--accent);
-        }
-        
-        /* DROPDOWN MEJORADO */
-        .dropdown {
-            position: relative;
-        }
-        
-        .dropdown-menu {
-            position: absolute;
-            top: 120%;
-            left: 50%;
-            transform: translateX(-50%);
-            background: white;
-            min-width: 220px;
-            padding: 16px 0;
-            border-radius: 12px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.12);
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-            border: 1px solid #f0f2f5;
-        }
-        
-        .dropdown:hover .dropdown-menu {
-            opacity: 1;
-            visibility: visible;
-            top: 100%;
-        }
-        
-        .dropdown-menu a {
-            display: block;
-            padding: 12px 24px;
-            color: var(--primary);
-            font-size: 14.5px;
-            transition: all 0.2s;
-        }
-        
-        .dropdown-menu a:hover {
-            background: var(--bg-light);
-            color: var(--accent);
-            padding-left: 30px;
-        }
-        
-        /* Móvil básico */
-        @media (max-width: 768px) {
-            .header-container {
-                flex-direction: column;
-                gap: 20px;
-            }
-            #mainNav {
-                gap: 20px;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <div class="container header-container">
-            <!-- LOGO PROFESIONAL -->
-            <a href="#inicio" class="logo">
-                <i class="fas fa-home logo-icon"></i>
-                <div class="logo-text">
-                    <h1>Dominican Investor</h1>
-                    <div class="slogan">Plataforma de inversión inmobiliaria premium en República Dominicana</div>
-                </div>
-            </a>
-            
-            <!-- MENÚ -->
-            <nav>
-                <ul id="mainNav">
-                    <li><a href="#inicio" class="active">Inicio</a></li>
-                    <li><a href="#propiedades">Oportunidades</a></li>
-                    <li class="dropdown">
-                        <a href="#">Inversión ▾</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#propiedades">Oportunidades</a></li>
-                            <li><a href="#asesoria">Asesoría</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#">La Firma ▾</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#nosotros">Quiénes Somos</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#contacto">Contacto</a></li>
-                </ul>
-            </nav>
+<main>
+    <!-- Sección Hero (introducción atractiva) -->
+    <section class="hero">
+        <div class="container">
+            <h1>Dominican Investor</h1>
+            <p>Descubre oportunidades de inversión inmobiliaria en República Dominicana, seleccionadas por su alta rentabilidad, potencial de plusvalía y seguridad jurídica para inversionistas extranjeros.</p>
+            <a href="#propiedades" class="btn-primary">Ver oportunidades de inversión</a>
         </div>
+    </section>
+
+    <!-- Sección de Propiedades con filtros -->
+    <section id="propiedades" class="properties-section">
+        <div class="container">
+            <h2>Propiedades Destacadas</h2>
+
+            <!-- Filtros organizados y bonitos -->
+            <div class="filters">
+                <div class="filter-group">
+                    <label>Categoría</label>
+                    <select>
+                        <option>Todas las categorías</option>
+                        <!-- Agrega más opciones si tienes -->
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label>Tipo</label>
+                    <select>
+                        <option>Compra o Alquiler</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label>Precio Máximo</label>
+                    <input type="number" placeholder="Ej: 500000" min="0">
+                </div>
+
+                <div class="filter-group">
+                    <label>Ubicación</label>
+                    <select>
+                        <option>Zonas de alto potencial</option>
+                    </select>
+                </div>
+
+                <button class="btn-primary">Analizar Oportunidades</button>
+                <button class="btn-secondary">Limpiar Filtros</button>
+            </div>
+
+            <!-- Grid de propiedades (aquí va tu lista actual) -->
+            <div class="grid-properties">
+                <p>Cargando propiedades...</p>
+                <!-- Aquí puedes poner después tus tarjetas de propiedades una por una -->
+            </div>
+
+            <!-- Botón nueva propiedad (abajo y centrado) -->
+            <div style="text-align: center; margin-top: 40px;">
+                <button class="btn-success">+ Nueva Propiedad</button>
+        /* Hero section */
+.hero {
+    padding: 100px 0 80px;
+    text-align: center;
+    background: linear-gradient(to bottom, #f8fbff, white);
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 16px;
+    color: #0a2540;
+}
+
+.hero p {
+    font-size: 18px;
+    max-width: 700px;
+    margin: 0 auto 30px;
+    color: #425466;
+}
+
+.btn-primary {
+    background: #1b5cff;
+    color: white;
+    padding: 14px 32px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-primary:hover { background: #0a47cc; }
+
+/* Filtros */
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin: 40px 0;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+.filter-group {
+    flex: 1;
+    min-width: 180px;
+}
+
+.filter-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #0a2540;
+}
+
+.filter-group select,
+.filter-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #d1d9e0;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+.btn-secondary {
+    background: #e2e8f0;
+    color: #0a2540;
+}
+
+/* Grid de propiedades */
+.grid-properties {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 24px;
+    margin-top: 40px;
+}
+
+.btn-success {
+    background: #10b981;
+    color: white;
+    padding: 14px 28px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+}
+            </div>
+        </div>
+    </section>
+</main>
     </header>
     
     <!-- El resto de tu página va aquí -->
@@ -1107,6 +1056,7 @@ para inversionistas extranjeros.</p>
 </body>
 
 </html>
+
 
 
 
