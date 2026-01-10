@@ -38,6 +38,14 @@
             }
         }
         .dropdown-menu { margin-top: 0 !important; }
+        /* Arreglar desplegables cortados en borde derecho */
+.dropdown-menu {
+    transform: translate3d(0px, 0px, 0px) !important; /* Evita corte por overflow */
+}
+.navbar-nav .dropdown-hover:last-child .dropdown-menu {
+    left: auto;
+    right: 0; /* Alinea a la izquierda los del borde derecho */
+}
     </style>
 </head>
 <body>
@@ -149,6 +157,7 @@
     </script>
 </body>
 </html>
+
 
 
 
